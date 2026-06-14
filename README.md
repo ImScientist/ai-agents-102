@@ -89,10 +89,9 @@ composing the Slack message — something a static pipeline cannot do.
 ├── gmail_client.py      # Gmail API utility — fetches and parses emails
 ├── slack_notifier.py    # Slack SDK utility — formats and sends messages
 ├── pyproject.toml       # Project metadata & dependencies (uv)
-├── uv.lock              # Locked dependency tree (commit this)
-├── credentials.json     # Gmail OAuth client secrets (you provide this)
+├── uv.lock              # Locked dependency tree
+├── client_secret.json   # Gmail OAuth client secrets (you provide this)
 ├── token.json           # Gmail OAuth token (auto-generated on first run)
 ├── .env                 # Your secrets (never commit this)
 └── .env.example         # Template for .env
 ```
-
