@@ -18,6 +18,7 @@ import asyncio
 from typing import Literal, Optional
 from pydantic import BaseModel
 from agents import Agent, Runner, RunHooks, RunContextWrapper
+from agents.tool import FunctionTool
 
 from tools import (
     fetch_recent_emails,
@@ -98,22 +99,21 @@ Marketing emails, newsletters, automated promotions, cold outreach, spam:
 
 class LoggingHooks(RunHooks):
     async def on_tool_start(
-            self,
-            context: RunContextWrapper,
-            tool_name: str,
-            **kwargs,
+        self,
+        context: RunContextWrapper,
+        agent: Agent,
+        tool: FunctionTool,
     ) -> None:
-        print(f"\n🔧  Tool call → {tool_name}")
+        print(f"\n🔧  Tool call → {tool.name}")
 
     async def on_tool_end(
-            self,
-            context: RunContextWrapper,
-            tool_name: str,
-            output: str,
-            **kwargs,
+        self,
+        context: RunContextWrapper,
+        agent: Agent,
+        tool: FunctionTool,
+        result: object,
     ) -> None:
-        # Only print first line of output to keep console readable
-        first_line = output.splitlines()[0] if output else ""
+        first_line = str(result).splitlines()[0] if result else ""
         print(f"    ↳ {first_line}")
 
 
@@ -146,7 +146,7 @@ async def run() -> InboxReport:
     result = await Runner.run(
         email_agent,
         input="Please process my inbox now.",
-        # hooks=LoggingHooks(),
+        hooks=LoggingHooks(),
         max_turns=60,
     )
     return result.final_output
