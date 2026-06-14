@@ -56,14 +56,38 @@ uv run main.py
 
 ---
 
+## Architecture
+
+This is a genuine **agentic** system built on the [OpenAI Agents SDK](https://github.com/openai/openai-agents-python).
+The LLM drives the entire flow by calling tools — there is no hard-coded routing logic.
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    Email Agent (GPT-4o)                 │
+│                                                         │
+│  1. Calls fetch_recent_emails()                         │
+│  2. For each email, decides autonomously:               │
+│     - Is this urgent?     → post_urgent_alert()         │
+│     - Is this GitHub?     → get_github_repo_info()      │
+│                             post_github_message()       │
+│     - Is this spam?       → skip_email()                │
+│     - Both urgent+GitHub? → calls both Slack tools      │
+└─────────────────────────────────────────────────────────┘
+```
+
+The agent can also **enrich** GitHub notifications with live repository metadata
+(stars, language, description, open issues) by calling the GitHub REST API before
+composing the Slack message — something a static pipeline cannot do.
+
 ## Project structure
 
 ```
 .
-├── main.py              # Entry point — orchestrates the full pipeline
-├── gmail_client.py      # Fetches and parses emails via Gmail API
-├── categorizer.py       # Uses GPT-4o to categorize each email
-├── slack_notifier.py    # Sends formatted messages to Slack
+├── main.py              # Async entry point
+├── agent.py             # Agent definition, instructions, logging hooks
+├── tools.py             # All @function_tool definitions (the agent's "hands")
+├── gmail_client.py      # Gmail API utility — fetches and parses emails
+├── slack_notifier.py    # Slack SDK utility — formats and sends messages
 ├── pyproject.toml       # Project metadata & dependencies (uv)
 ├── uv.lock              # Locked dependency tree (commit this)
 ├── credentials.json     # Gmail OAuth client secrets (you provide this)
