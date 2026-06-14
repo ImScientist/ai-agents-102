@@ -1,0 +1,11 @@
+.env
+token.json
+client_secret.json
+notes.md
+notebooks/
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.idea/

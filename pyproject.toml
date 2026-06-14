@@ -1,0 +1,15 @@
+[project]
+name = "ai-agents-102"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = [
+    "google-api-python-client>=2.126.0",
+    "google-auth>=2.29.0",
+    "google-auth-httplib2>=0.2.0",
+    "google-auth-oauthlib>=1.2.0",
+    "openai>=1.30.0",
+    "openai-agents>=0.17.5",
+    "python-dotenv>=1.0.1",
+    "slack-sdk>=3.27.0",
+]
