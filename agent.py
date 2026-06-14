@@ -34,7 +34,7 @@ You are an email-processing agent. Your goal is to triage the user's inbox
 and take the right action for every email.
 
 ## Step 1 — Fetch emails
-Call `fetch_recent_emails` to retrieve the last 20 emails.
+Call `fetch_recent_emails` to retrieve the last 5 emails.
 
 ## Step 2 — Process each email
 For every email decide which category it belongs to and call the matching tool:
@@ -68,25 +68,26 @@ Marketing emails, newsletters, automated promotions, cold outreach, spam:
 - When you have finished all emails, output a brief plain-text summary of what you did.
 """
 
+
 # ---------------------------------------------------------------------------
 # Optional: logging hooks so the terminal shows the agent's reasoning
 # ---------------------------------------------------------------------------
 
 class LoggingHooks(RunHooks):
     async def on_tool_start(
-        self,
-        context: RunContextWrapper,
-        tool_name: str,
-        **kwargs,
+            self,
+            context: RunContextWrapper,
+            tool_name: str,
+            **kwargs,
     ) -> None:
         print(f"\n🔧  Tool call → {tool_name}")
 
     async def on_tool_end(
-        self,
-        context: RunContextWrapper,
-        tool_name: str,
-        output: str,
-        **kwargs,
+            self,
+            context: RunContextWrapper,
+            tool_name: str,
+            output: str,
+            **kwargs,
     ) -> None:
         # Only print first line of output to keep console readable
         first_line = output.splitlines()[0] if output else ""
@@ -121,7 +122,7 @@ async def run() -> str:
     result = await Runner.run(
         email_agent,
         input="Please process my inbox now.",
-        hooks=LoggingHooks(),
+        # hooks=LoggingHooks(),
         max_turns=60,  # up to 60 LLM turns to handle 20 emails with enrichment
     )
     return result.final_output
@@ -130,4 +131,3 @@ async def run() -> str:
 if __name__ == "__main__":
     summary = asyncio.run(run())
     print(f"\n📋  Agent summary:\n{summary}")
-

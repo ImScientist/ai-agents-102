@@ -1,6 +1,8 @@
 .env
 token.json
-credentials.json
+client_secret.json
+notes.md
+notebooks/
 __pycache__/
 *.pyc
 .venv/

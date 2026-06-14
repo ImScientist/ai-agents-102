@@ -7,13 +7,17 @@ import os
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
+SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
+SLACK_ALERTS_CHANNEL = os.environ.get("SLACK_ALERTS_CHANNEL", "#alerts")
+SLACK_GITHUB_CHANNEL = os.environ.get("SLACK_GITHUB_CHANNEL", "#github")
+
 _client: WebClient | None = None
 
 
 def _get_client() -> WebClient:
     global _client
     if _client is None:
-        token = os.environ.get("SLACK_BOT_TOKEN")
+        token = SLACK_BOT_TOKEN
         if not token:
             raise EnvironmentError("SLACK_BOT_TOKEN is not set in the environment.")
         _client = WebClient(token=token)
@@ -37,7 +41,8 @@ def _post(channel: str, text: str, blocks: list | None = None) -> None:
 
 def post_urgent_alert(email: dict, classification: dict) -> None:
     """Post an urgent alert to #alerts."""
-    channel = os.environ.get("SLACK_ALERTS_CHANNEL", "#alerts")
+
+    channel = SLACK_ALERTS_CHANNEL
     blocks = [
         {
             "type": "header",
@@ -66,14 +71,15 @@ def post_urgent_alert(email: dict, classification: dict) -> None:
 
 _SUBCATEGORY_LABELS = {
     "new_pull_request": "🔀 New Pull Request",
-    "comment":          "💬 Comment",
-    "ci_message":       "⚙️ CI / Automation",
+    "comment": "💬 Comment",
+    "ci_message": "⚙️ CI / Automation",
 }
 
 
 def post_github_message(email: dict, classification: dict) -> None:
     """Post a GitHub-related message to #github."""
-    channel = os.environ.get("SLACK_GITHUB_CHANNEL", "#github")
+
+    channel = SLACK_GITHUB_CHANNEL
     subcategory = classification.get("github_subcategory") or "unknown"
     label = _SUBCATEGORY_LABELS.get(subcategory, f"📧 {subcategory}")
     repo = classification.get("repo") or "unknown repository"
@@ -102,4 +108,3 @@ def post_github_message(email: dict, classification: dict) -> None:
     ]
     fallback = f"GitHub [{label}] {repo} — {email['subject']}"
     _post(channel, fallback, blocks)
-

@@ -14,8 +14,7 @@ from googleapiclient.discovery import build
 
 # Read-only access to Gmail is sufficient
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
-
-CREDENTIALS_FILE = "credentials.json"
+CREDENTIALS_FILE = "client_secret.json"
 TOKEN_FILE = "token.json"
 
 
@@ -61,7 +60,7 @@ def _parse_headers(headers: list[dict]) -> dict:
     return {h["name"]: h["value"] for h in headers if h["name"] in wanted}
 
 
-def fetch_recent_emails(n: int = 20) -> list[dict]:
+def fetch_recent_emails(n: int = 5) -> list[dict]:
     """
     Return the last `n` emails as a list of dicts with keys:
         id, subject, sender, date, snippet, body
@@ -94,4 +93,3 @@ def fetch_recent_emails(n: int = 20) -> list[dict]:
         )
 
     return emails
-
