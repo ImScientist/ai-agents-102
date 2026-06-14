@@ -15,7 +15,9 @@ not hard-coded if/elif branches.
 """
 
 import asyncio
-from agents import Agent, Runner, RunHooks, RunContextWrapper, RunItem
+from typing import Literal, Optional
+from pydantic import BaseModel
+from agents import Agent, Runner, RunHooks, RunContextWrapper
 
 from tools import (
     fetch_recent_emails,
@@ -24,6 +26,26 @@ from tools import (
     post_github_message,
     skip_email,
 )
+
+# ---------------------------------------------------------------------------
+# Structured output schema
+# ---------------------------------------------------------------------------
+
+class EmailAction(BaseModel):
+    subject: str
+    sender: str
+    category: Literal["urgent", "github", "newsletter_spam"]
+    github_subcategory: Optional[Literal["new_pull_request", "comment", "ci_message"]] = None
+    action_taken: str  # human-readable description of what the agent did
+
+
+class InboxReport(BaseModel):
+    total_processed: int
+    urgent_count: int
+    github_count: int
+    skipped_count: int
+    actions: list[EmailAction]
+
 
 # ---------------------------------------------------------------------------
 # Agent instructions
@@ -65,7 +87,7 @@ Marketing emails, newsletters, automated promotions, cold outreach, spam:
 - An email can belong to more than one category (e.g. urgent *and* GitHub-related).
   In that case call both `post_urgent_alert` and `post_github_message`.
 - Keep summaries concise: 1-2 sentences.
-- When you have finished all emails, output a brief plain-text summary of what you did.
+- When you have finished all emails, produce the final structured InboxReport.
 """
 
 
@@ -102,6 +124,7 @@ email_agent = Agent(
     name="Email Processing Agent",
     model="gpt-4o",
     instructions=INSTRUCTIONS,
+    output_type=InboxReport,
     tools=[
         fetch_recent_emails,
         get_github_repo_info,
@@ -116,18 +139,26 @@ email_agent = Agent(
 # Entry point
 # ---------------------------------------------------------------------------
 
-async def run() -> str:
-    """Run the agent and return its final summary."""
+async def run() -> InboxReport:
+    """Run the agent and return a structured InboxReport."""
     print("🤖  Email agent starting…\n")
     result = await Runner.run(
         email_agent,
         input="Please process my inbox now.",
         # hooks=LoggingHooks(),
-        max_turns=60,  # up to 60 LLM turns to handle 20 emails with enrichment
+        max_turns=60,
     )
     return result.final_output
 
 
 if __name__ == "__main__":
-    summary = asyncio.run(run())
-    print(f"\n📋  Agent summary:\n{summary}")
+    report: InboxReport = asyncio.run(run())
+    print(f"\n📋  Inbox report:")
+    print(f"    Processed : {report.total_processed}")
+    print(f"    Urgent    : {report.urgent_count}")
+    print(f"    GitHub    : {report.github_count}")
+    print(f"    Skipped   : {report.skipped_count}")
+    print(f"\n    Actions:")
+    for action in report.actions:
+        sub = f" [{action.github_subcategory}]" if action.github_subcategory else ""
+        print(f"      • [{action.category}{sub}] {action.subject!r} — {action.action_taken}")
