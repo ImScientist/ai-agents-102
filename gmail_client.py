@@ -6,11 +6,12 @@ On the first run it will open a browser for OAuth consent and save token.json.
 
 import os
 import base64
-import email as email_lib
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
+
+from models import Email
 
 # Read-only access to Gmail is sufficient
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
@@ -60,11 +61,8 @@ def _parse_headers(headers: list[dict]) -> dict:
     return {h["name"]: h["value"] for h in headers if h["name"] in wanted}
 
 
-def fetch_recent_emails(n: int = 5) -> list[dict]:
-    """
-    Return the last `n` emails as a list of dicts with keys:
-        id, subject, sender, date, snippet, body
-    """
+def fetch_recent_emails(n: int = 5) -> list[Email]:
+    """Return the last `n` emails from the Gmail inbox."""
     service = _get_service()
     results = service.users().messages().list(userId="me", maxResults=n).execute()
     messages = results.get("messages", [])
@@ -81,15 +79,14 @@ def fetch_recent_emails(n: int = 5) -> list[dict]:
         body = _decode_body(msg.get("payload", {}))
 
         emails.append(
-            {
-                "id": msg_ref["id"],
-                "subject": headers.get("Subject", "(no subject)"),
-                "sender": headers.get("From", "(unknown)"),
-                "date": headers.get("Date", ""),
-                "snippet": msg.get("snippet", ""),
+            Email(
+                id=msg_ref["id"],
+                subject=headers.get("Subject", "(no subject)"),
+                sender=headers.get("From", "(unknown)"),
+                date=headers.get("Date", ""),
+                snippet=msg.get("snippet", ""),
                 # Trim body to avoid huge prompts; 2 000 chars is plenty for classification
-                "body": body[:2000].strip(),
-            }
-        )
+                body=body[:2000].strip(),
+            ))
 
     return emails

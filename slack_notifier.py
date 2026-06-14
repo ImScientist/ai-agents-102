@@ -7,6 +7,8 @@ import os
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
+from models import EmailRef, UrgentClassification, GithubClassification
+
 SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
 SLACK_ALERTS_CHANNEL = os.environ.get("SLACK_ALERTS_CHANNEL", "#alerts")
 SLACK_GITHUB_CHANNEL = os.environ.get("SLACK_GITHUB_CHANNEL", "#github")
@@ -21,15 +23,12 @@ def _get_client() -> WebClient:
         if not token:
             raise EnvironmentError("SLACK_BOT_TOKEN is not set in the environment.")
         _client = WebClient(token=token)
-    return _client
+    return _client  # type: ignore[return-value]  # narrowed to WebClient above
 
 
 def _post(channel: str, text: str, blocks: list | None = None) -> None:
     try:
-        kwargs = {"channel": channel, "text": text}
-        if blocks:
-            kwargs["blocks"] = blocks
-        _get_client().chat_postMessage(**kwargs)
+        _get_client().chat_postMessage(channel=channel, text=text, blocks=blocks)
         print(f"  ✅  Posted to {channel}")
     except SlackApiError as e:
         print(f"  ❌  Slack error for {channel}: {e.response['error']}")
@@ -39,7 +38,7 @@ def _post(channel: str, text: str, blocks: list | None = None) -> None:
 # Public helpers
 # ---------------------------------------------------------------------------
 
-def post_urgent_alert(email: dict, classification: dict) -> None:
+def post_urgent_alert(email: EmailRef, classification: UrgentClassification) -> None:
     """Post an urgent alert to #alerts."""
 
     channel = SLACK_ALERTS_CHANNEL
@@ -51,21 +50,21 @@ def post_urgent_alert(email: dict, classification: dict) -> None:
         {
             "type": "section",
             "fields": [
-                {"type": "mrkdwn", "text": f"*From:*\n{email['sender']}"},
-                {"type": "mrkdwn", "text": f"*Date:*\n{email['date']}"},
+                {"type": "mrkdwn", "text": f"*From:*\n{email.sender}"},
+                {"type": "mrkdwn", "text": f"*Date:*\n{email.date}"},
             ],
         },
         {
             "type": "section",
-            "text": {"type": "mrkdwn", "text": f"*Subject:* {email['subject']}"},
+            "text": {"type": "mrkdwn", "text": f"*Subject:* {email.subject}"},
         },
         {
             "type": "section",
-            "text": {"type": "mrkdwn", "text": f"*Summary:*\n{classification['summary']}"},
+            "text": {"type": "mrkdwn", "text": f"*Summary:*\n{classification.summary}"},
         },
         {"type": "divider"},
     ]
-    fallback = f"🚨 Urgent email from {email['sender']}: {email['subject']}"
+    fallback = f"🚨 Urgent email from {email.sender}: {email.subject}"
     _post(channel, fallback, blocks)
 
 
@@ -76,13 +75,13 @@ _SUBCATEGORY_LABELS = {
 }
 
 
-def post_github_message(email: dict, classification: dict) -> None:
+def post_github_message(email: EmailRef, classification: GithubClassification) -> None:
     """Post a GitHub-related message to #github."""
 
     channel = SLACK_GITHUB_CHANNEL
-    subcategory = classification.get("github_subcategory") or "unknown"
+    subcategory = classification.subcategory
     label = _SUBCATEGORY_LABELS.get(subcategory, f"📧 {subcategory}")
-    repo = classification.get("repo") or "unknown repository"
+    repo = classification.repo
 
     blocks = [
         {
@@ -98,13 +97,13 @@ def post_github_message(email: dict, classification: dict) -> None:
         },
         {
             "type": "section",
-            "text": {"type": "mrkdwn", "text": f"*Subject:* {email['subject']}"},
+            "text": {"type": "mrkdwn", "text": f"*Subject:* {email.subject}"},
         },
         {
             "type": "section",
-            "text": {"type": "mrkdwn", "text": f"*Summary:*\n{classification['summary']}"},
+            "text": {"type": "mrkdwn", "text": f"*Summary:*\n{classification.summary}"},
         },
         {"type": "divider"},
     ]
-    fallback = f"GitHub [{label}] {repo} — {email['subject']}"
+    fallback = f"GitHub [{label}] {repo} — {email.subject}"
     _post(channel, fallback, blocks)

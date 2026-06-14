@@ -11,6 +11,7 @@ from agents import function_tool
 from gmail_client import fetch_recent_emails as _fetch_emails
 from slack_notifier import post_urgent_alert as _post_urgent
 from slack_notifier import post_github_message as _post_github
+from models import EmailRef, UrgentClassification, GithubClassification
 
 
 # ---------------------------------------------------------------------------
@@ -29,7 +30,7 @@ def fetch_recent_emails(count: int = 20) -> str:
         id, subject, sender, date, snippet, body
     """
     emails = _fetch_emails(count)
-    return json.dumps(emails, ensure_ascii=False, indent=2)
+    return json.dumps([e.model_dump() for e in emails], ensure_ascii=False, indent=2)
 
 
 # ---------------------------------------------------------------------------
@@ -91,8 +92,8 @@ def post_urgent_alert(sender: str, subject: str, date: str, summary: str) -> str
         summary: A 1-2 sentence description of why this is urgent.
     """
     _post_urgent(
-        email={"sender": sender, "subject": subject, "date": date},
-        classification={"summary": summary},
+        email=EmailRef(sender=sender, subject=subject, date=date),
+        classification=UrgentClassification(summary=summary),
     )
     return f"✅ Urgent alert posted for: {subject!r}"
 
@@ -118,12 +119,8 @@ def post_github_message(
         summary:     A 1-2 sentence description of the event, enriched with repo info if available.
     """
     _post_github(
-        email={"sender": sender, "subject": subject, "date": date},
-        classification={
-            "github_subcategory": subcategory,
-            "repo": repo,
-            "summary": summary,
-        },
+        email=EmailRef(sender=sender, subject=subject, date=date),
+        classification=GithubClassification(subcategory=subcategory, repo=repo, summary=summary),
     )
     return f"✅ GitHub message posted for: {subject!r} [{subcategory}]"
 
