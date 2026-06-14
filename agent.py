@@ -15,9 +15,11 @@ not hard-coded if/elif branches.
 """
 
 import asyncio
+import os
 from typing import Literal, Optional
 from pydantic import BaseModel
-from agents import Agent, Runner, RunHooks, RunContextWrapper
+from openai import AsyncOpenAI
+from agents import Agent, Runner, RunHooks, RunContextWrapper, set_default_openai_client, set_default_openai_api
 from agents.tool import FunctionTool
 
 from tools import (
@@ -27,6 +29,33 @@ from tools import (
     post_github_message,
     skip_email,
 )
+
+# ---------------------------------------------------------------------------
+# LLM client — uses GitHub Models if GITHUB_TOKEN is set, otherwise OpenAI
+# ---------------------------------------------------------------------------
+
+def _configure_client() -> str:
+    """
+    Point the Agents SDK at GitHub Models when a GITHUB_TOKEN is present,
+    or fall back to the standard OpenAI API (requires OPENAI_API_KEY).
+    Returns the model name to use.
+    """
+    github_token = os.environ.get("GITHUB_TOKEN")
+    if github_token:
+        client = AsyncOpenAI(
+            base_url="https://models.inference.ai.azure.com",
+            api_key=github_token,
+        )
+        set_default_openai_client(client)
+        # GitHub Models exposes the Chat Completions API, not the newer
+        # Responses API that the Agents SDK uses by default.
+        set_default_openai_api("chat_completions")
+        return "gpt-4o"  # available on GitHub Models
+    return "gpt-4o"  # default OpenAI model
+
+
+_MODEL = _configure_client()
+
 
 # ---------------------------------------------------------------------------
 # Structured output schema
@@ -123,7 +152,7 @@ class LoggingHooks(RunHooks):
 
 email_agent = Agent(
     name="Email Processing Agent",
-    model="gpt-4o",
+    model=_MODEL,
     instructions=INSTRUCTIONS,
     output_type=InboxReport,
     tools=[
