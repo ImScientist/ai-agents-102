@@ -3,9 +3,12 @@ slack_notifier.py
 Sends formatted messages to Slack channels.
 """
 
+import logging
 import os
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
+
+logger = logging.getLogger(__name__)
 
 from models import EmailRef, UrgentClassification, GithubClassification
 
@@ -29,9 +32,9 @@ def _get_client() -> WebClient:
 def _post(channel: str, text: str, blocks: list | None = None) -> None:
     try:
         _get_client().chat_postMessage(channel=channel, text=text, blocks=blocks)
-        print(f"  ✅  Posted to {channel}")
+        logger.info("✅  Posted to %s", channel)
     except SlackApiError as e:
-        print(f"  ❌  Slack error for {channel}: {e.response['error']}")
+        logger.error("❌  Slack error for %s: %s", channel, e.response["error"])
 
 
 # ---------------------------------------------------------------------------

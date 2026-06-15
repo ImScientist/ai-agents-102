@@ -15,10 +15,13 @@ not hard-coded if/elif branches.
 """
 
 import asyncio
+import logging
 from typing import Literal, Optional
 from pydantic import BaseModel
 from agents import Agent, Runner, RunHooks, RunContextWrapper
 from agents.tool import FunctionTool
+
+logger = logging.getLogger(__name__)
 
 from tools import (
     fetch_recent_emails,
@@ -27,6 +30,7 @@ from tools import (
     post_github_message,
     skip_email,
 )
+
 
 # ---------------------------------------------------------------------------
 # Structured output schema
@@ -92,29 +96,28 @@ Marketing emails, newsletters, automated promotions, cold outreach, spam:
 """
 
 
-
 # ---------------------------------------------------------------------------
 # Optional: logging hooks so the terminal shows the agent's reasoning
 # ---------------------------------------------------------------------------
 
 class LoggingHooks(RunHooks):
     async def on_tool_start(
-        self,
-        context: RunContextWrapper,
-        agent: Agent,
-        tool: FunctionTool,
+            self,
+            context: RunContextWrapper,
+            agent: Agent,
+            tool: FunctionTool,
     ) -> None:
-        print(f"\n🔧  Tool call → {tool.name}")
+        logger.info("🔧  Tool call → %s", tool.name)
 
     async def on_tool_end(
-        self,
-        context: RunContextWrapper,
-        agent: Agent,
-        tool: FunctionTool,
-        result: object,
+            self,
+            context: RunContextWrapper,
+            agent: Agent,
+            tool: FunctionTool,
+            result: object,
     ) -> None:
         first_line = str(result).splitlines()[0] if result else ""
-        print(f"    ↳ {first_line}")
+        logger.info("    ↳ %s", first_line)
 
 
 # ---------------------------------------------------------------------------
@@ -142,7 +145,7 @@ email_agent = Agent(
 
 async def run() -> InboxReport:
     """Run the agent and return a structured InboxReport."""
-    print("🤖  Email agent starting…\n")
+    logger.info("🤖  Email agent starting…")
     result = await Runner.run(
         email_agent,
         input="Please process my inbox now.",
@@ -153,13 +156,22 @@ async def run() -> InboxReport:
 
 
 if __name__ == "__main__":
+    from logging_config import setup_logging
+
+    setup_logging()
+
     report: InboxReport = asyncio.run(run())
-    print(f"\n📋  Inbox report:")
-    print(f"    Processed : {report.total_processed}")
-    print(f"    Urgent    : {report.urgent_count}")
-    print(f"    GitHub    : {report.github_count}")
-    print(f"    Skipped   : {report.skipped_count}")
-    print(f"\n    Actions:")
+    lines = [
+        "📋  Inbox report:",
+        f"    Processed : {report.total_processed}",
+        f"    Urgent    : {report.urgent_count}",
+        f"    GitHub    : {report.github_count}",
+        f"    Skipped   : {report.skipped_count}",
+        "    Actions:",
+    ]
     for action in report.actions:
         sub = f" [{action.github_subcategory}]" if action.github_subcategory else ""
-        print(f"      • [{action.category}{sub}] {action.subject!r} — {action.action_taken}")
+        lines.append(
+            f"      • [{action.category}{sub}] {action.subject!r} — {action.action_taken}"
+        )
+    logger.info("\n%s", "\n".join(lines))
