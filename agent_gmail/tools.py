@@ -5,8 +5,11 @@ The LLM decides which tools to call and in what order — not our code.
 """
 
 import json
+import logging
 import requests
 from agents import function_tool
+
+logger = logging.getLogger(__name__)
 
 from gmail_client import fetch_recent_emails as _fetch_emails
 from slack_notifier import post_urgent_alert as _post_urgent
@@ -49,7 +52,7 @@ def get_github_repo_info(repo: str) -> str:
     Returns a JSON object with description, language, stars, open issues, etc.
     """
     try:
-        print(f"  Get info about {repo} Github repository")
+        logger.info("Fetching GitHub repo info for %s", repo)
 
         resp = requests.get(
             f"https://api.github.com/repos/{repo}",
@@ -138,5 +141,5 @@ def skip_email(subject: str, reason: str) -> str:
         subject: The email subject line.
         reason:  Brief reason for skipping (e.g. "newsletter", "spam", "automated promo").
     """
-    print(f"  ⏭️  Skipping: {subject!r} — {reason}")
+    logger.info("⏭️  Skipping %r — %s", subject, reason)
     return f"Skipped: {subject!r}"
