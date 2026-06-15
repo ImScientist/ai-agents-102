@@ -49,6 +49,8 @@ def get_github_repo_info(repo: str) -> str:
     Returns a JSON object with description, language, stars, open issues, etc.
     """
     try:
+        print(f"  Get info about {repo} Github repository")
+
         resp = requests.get(
             f"https://api.github.com/repos/{repo}",
             timeout=5,
@@ -120,7 +122,8 @@ def post_github_message(
     """
     _post_github(
         email=EmailRef(sender=sender, subject=subject, date=date),
-        classification=GithubClassification(subcategory=subcategory, repo=repo, summary=summary),
+        classification=GithubClassification(
+            subcategory=subcategory, repo=repo, summary=summary),
     )
     return f"✅ GitHub message posted for: {subject!r} [{subcategory}]"
 
