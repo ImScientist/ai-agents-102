@@ -39,23 +39,6 @@
       white-space: nowrap;
     }
     .filter-group label { font-weight: 500; }
-    .filter-group select {
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 0.25rem 0.75rem 0.25rem 0.5rem;
-      font-size: 0.82rem;
-      background: white;
-      cursor: pointer;
-      min-width: 130px;
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.5rem center;
-      padding-right: 1.6rem;
-      outline: none;
-    }
-    .filter-group select:hover { border-color: #e94560; }
 
     /* Custom time dropdown — mirrors movie dropdown style */
     .time-select-wrapper { position: relative; }
@@ -119,7 +102,6 @@
     #movie-select-btn .arrow { font-size: 0.6rem; color: #888; }
 
     #movie-dropdown {
-      display: none;
       position: absolute;
       top: calc(100% + 4px);
       left: 0;
@@ -204,7 +186,6 @@
     }
 
     /* ── Popup ── */
-    .cinema-popup { min-width: 220px; max-width: 300px; }
     .cinema-popup h3 { font-size: 0.95rem; margin-bottom: 0.35rem; color: #1a1a2e; }
     .cinema-popup p { font-size: 0.8rem; color: #555; margin-bottom: 0.4rem; }
     .cinema-popup .no-movies { font-size: 0.8rem; color: #999; font-style: italic; margin-bottom: 0.4rem; }
@@ -337,7 +318,6 @@
       if (filtered.length > 0) {
         marker.setPopupContent(buildPopup(cinema, filtered));
         if (!map.hasLayer(marker)) marker.addTo(map);
-        visible++;
       } else {
         if (map.hasLayer(marker)) map.removeLayer(marker);
       }
@@ -455,7 +435,6 @@
     applyFilters();
   });
 
-  document.getElementById("time-filter") && document.getElementById("time-filter").addEventListener("change", applyFilters);
 
   // ── Load data ──────────────────────────────────────────────────────────────
   fetch("cinemas.json")
@@ -486,7 +465,6 @@
     })
     .catch(err => {
       console.error("Failed to load cinemas.json:", err);
-      document.getElementById("count").textContent = "data unavailable";
     });
 </script>
 
