@@ -172,7 +172,7 @@
     })
     .then(data => {
       // New format: { fetched_at, date, cinemas: [...] }
-      const cinemas = data.cinemas ?? data;
+      const cinemas = (data.cinemas ?? data).filter(c => c.movies && c.movies.length > 0);
 
       document.getElementById("count").textContent = `${cinemas.length} cinemas`;
 
