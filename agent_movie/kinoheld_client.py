@@ -48,6 +48,10 @@ query($citySlug: String!) {
         id
         name
         urlSlug
+        street
+        postcode { postcode }
+        latitude
+        longitude
       }
     }
   }
@@ -85,7 +89,15 @@ def fetch_berlin_cinemas() -> list[Cinema]:
     data = _post(_GET_CINEMAS_QUERY, {"citySlug": "berlin"})
     raw = data.get("city", {}).get("cinemas", {}).get("data", [])
     cinemas = [
-        Cinema(id=c["id"], name=c["name"], url_slug=c["urlSlug"])
+        Cinema(
+            id=c["id"],
+            name=c["name"],
+            url_slug=c["urlSlug"],
+            street=c.get("street"),
+            postcode=(c.get("postcode") or {}).get("postcode"),
+            latitude=c.get("latitude"),
+            longitude=c.get("longitude"),
+        )
         for c in raw
     ]
     logger.info("Found %d cinemas in Berlin", len(cinemas))

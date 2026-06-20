@@ -11,6 +11,10 @@ class Cinema(BaseModel):
     id: str
     name: str
     url_slug: str
+    street: str | None = None
+    postcode: str | None = None
+    latitude: float | None = None
+    longitude: float | None = None
 
 
 class Movie(BaseModel):
