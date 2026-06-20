@@ -200,7 +200,6 @@
 
       cinemas.forEach(c => {
         const address = [c.street, c.postcode].filter(Boolean).join(", ");
-        const kinoheldUrl = `https://www.kinoheld.de/kino/${c.url_slug}/shows`;
         const movieCount = (c.movies || []).length;
 
         const popup = `
@@ -209,9 +208,6 @@
             ${address ? `<p>📍 ${address}</p>` : ""}
             <p>🎬 <strong>${movieCount}</strong> movie${movieCount !== 1 ? "s" : ""} today</p>
             ${buildMovieList(c.movies)}
-            <a href="${kinoheldUrl}" target="_blank" rel="noopener">
-              Buy tickets on Kinoheld ↗
-            </a>
           </div>`;
 
         L.marker([c.latitude, c.longitude], { icon: cinemaIcon })
