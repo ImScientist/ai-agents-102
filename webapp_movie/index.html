@@ -39,16 +39,67 @@
       white-space: nowrap;
     }
     .filter-group label { font-weight: 500; }
-    .filter-group input[type="time"] {
+    .filter-group select {
       border: 1px solid #ccc;
       border-radius: 6px;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem 0.25rem 0.5rem;
       font-size: 0.82rem;
       background: white;
       cursor: pointer;
+      min-width: 130px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.5rem center;
+      padding-right: 1.6rem;
+      outline: none;
     }
+    .filter-group select:hover { border-color: #e94560; }
 
-    /* Movie selector dropdown */
+    /* Custom time dropdown — mirrors movie dropdown style */
+    .time-select-wrapper { position: relative; }
+    #time-select-btn {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 0.25rem 0.75rem 0.25rem 0.5rem;
+      font-size: 0.82rem;
+      background: white;
+      cursor: pointer;
+      min-width: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.4rem;
+      user-select: none;
+    }
+    #time-select-btn:hover { border-color: #e94560; }
+    #time-select-btn .arrow { font-size: 0.6rem; color: #888; }
+
+    #time-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      z-index: 1000;
+      min-width: 130px;
+      overflow: hidden;
+      flex-direction: column;
+    }
+    #time-dropdown.open { display: flex; }
+
+    .time-option {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.82rem;
+      cursor: pointer;
+      color: #333;
+    }
+    .time-option:hover { background: #f5f5f5; }
+    .time-option.selected { font-weight: 600; color: #1a1a2e; background: #fef0f2; }    /* Movie selector dropdown */
     .movie-select-wrapper { position: relative; }
     #movie-select-btn {
       border: 1px solid #ccc;
@@ -147,6 +198,11 @@
     /* ── Map ── */
     #map { flex: 1; }
 
+    .leaflet-control-attribution {
+      font-size: 0.6rem;
+      opacity: 0.6;
+    }
+
     /* ── Popup ── */
     .cinema-popup { min-width: 220px; max-width: 300px; }
     .cinema-popup h3 { font-size: 0.95rem; margin-bottom: 0.35rem; color: #1a1a2e; }
@@ -165,8 +221,29 @@
 <!-- Filter bar -->
 <div id="filter-bar">
   <div class="filter-group">
-    <label for="time-filter">🕐 After</label>
-    <input type="time" id="time-filter" value="00:00" />
+    <label>🕐 After</label>
+    <div class="time-select-wrapper">
+      <div id="time-select-btn">
+        <span id="time-select-label">Any time</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div id="time-dropdown">
+        <div class="time-option selected" data-value="00:00">Any time</div>
+        <div class="time-option" data-value="11:00">11:00</div>
+        <div class="time-option" data-value="12:00">12:00</div>
+        <div class="time-option" data-value="13:00">13:00</div>
+        <div class="time-option" data-value="14:00">14:00</div>
+        <div class="time-option" data-value="15:00">15:00</div>
+        <div class="time-option" data-value="16:00">16:00</div>
+        <div class="time-option" data-value="17:00">17:00</div>
+        <div class="time-option" data-value="18:00">18:00</div>
+        <div class="time-option" data-value="19:00">19:00</div>
+        <div class="time-option" data-value="20:00">20:00</div>
+        <div class="time-option" data-value="21:00">21:00</div>
+        <div class="time-option" data-value="22:00">22:00</div>
+        <div class="time-option" data-value="23:00">23:00</div>
+      </div>
+    </div>
   </div>
 
   <div class="filter-group">
@@ -209,15 +286,14 @@
   });
 
   // ── State ──────────────────────────────────────────────────────────────────
-  let allCinemas = [];       // full data from JSON (only those with movies)
-  let allMovieTitles = [];   // sorted unique movie titles
-  let selectedMovies = new Set(); // empty = no filter (show all)
-  let markers = [];          // { cinema, marker } pairs
+  let allCinemas = [];
+  let allMovieTitles = [];
+  let selectedMovies = new Set();
+  let markers = [];
+  let selectedTime = "00:00";
 
   // ── Helpers ────────────────────────────────────────────────────────────────
-  function getTimeFilter() {
-    return document.getElementById("time-filter").value || "00:00";
-  }
+  function getTimeFilter() { return selectedTime; }
 
   function filterMovies(movies) {
     const afterTime = getTimeFilter();
@@ -267,6 +343,33 @@
       }
     });
   }
+
+  // ── Time dropdown ──────────────────────────────────────────────────────────
+  const timeDropdown = document.getElementById("time-dropdown");
+  const timeSelectBtn = document.getElementById("time-select-btn");
+
+  timeSelectBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    timeDropdown.classList.toggle("open");
+  });
+
+  timeDropdown.querySelectorAll(".time-option").forEach(opt => {
+    opt.addEventListener("click", e => {
+      e.stopPropagation();
+      selectedTime = opt.dataset.value;
+      document.getElementById("time-select-label").textContent = opt.textContent;
+      timeDropdown.querySelectorAll(".time-option").forEach(o => o.classList.remove("selected"));
+      opt.classList.add("selected");
+      timeDropdown.classList.remove("open");
+      applyFilters();
+    });
+  });
+
+  document.addEventListener("click", () => {
+    timeDropdown.classList.remove("open");
+    dropdown.classList.remove("open");
+  });
+  timeDropdown.addEventListener("click", e => e.stopPropagation());
 
   // ── Movie dropdown ─────────────────────────────────────────────────────────
   const dropdown    = document.getElementById("movie-dropdown");
@@ -325,7 +428,6 @@
 
   searchInput.addEventListener("input", () => renderOptions(searchInput.value));
 
-  document.addEventListener("click", () => dropdown.classList.remove("open"));
   dropdown.addEventListener("click", e => e.stopPropagation());
 
   document.getElementById("select-all-btn").addEventListener("click", () => {
@@ -343,14 +445,17 @@
   });
 
   document.getElementById("reset-filters").addEventListener("click", () => {
-    document.getElementById("time-filter").value = "00:00";
+    selectedTime = "00:00";
+    document.getElementById("time-select-label").textContent = "Any time";
+    timeDropdown.querySelectorAll(".time-option").forEach(o =>
+      o.classList.toggle("selected", o.dataset.value === "00:00"));
     selectedMovies.clear();
     updateSelectLabel();
     renderOptions();
     applyFilters();
   });
 
-  document.getElementById("time-filter").addEventListener("change", applyFilters);
+  document.getElementById("time-filter") && document.getElementById("time-filter").addEventListener("change", applyFilters);
 
   // ── Load data ──────────────────────────────────────────────────────────────
   fetch("cinemas.json")
