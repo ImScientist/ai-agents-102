@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berlin Cinemas Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    header h1 { font-size: 1.15rem; font-weight: 600; }
+
+    header span.badge {
+      background: #e94560;
+      color: white;
+      border-radius: 12px;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    header .updated {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    #map { flex: 1; }
+
+    /* Popup styling */
+    .cinema-popup {
+      min-width: 220px;
+      max-width: 300px;
+    }
+
+    .cinema-popup h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+      color: #1a1a2e;
+    }
+
+    .cinema-popup p {
+      font-size: 0.8rem;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+
+    .cinema-popup a {
+      font-size: 0.8rem;
+      color: #e94560;
+      text-decoration: none;
+    }
+
+    .cinema-popup a:hover { text-decoration: underline; }
+
+    .cinema-popup .no-movies {
+      font-size: 0.8rem;
+      color: #999;
+      font-style: italic;
+      margin-bottom: 0.4rem;
+    }
+
+    .movie-list {
+      list-style: none;
+      margin: 0.4rem 0;
+      padding: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      border-top: 1px solid #eee;
+    }
+
+    .movie-list li {
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #f3f3f3;
+      font-size: 0.78rem;
+      color: #333;
+    }
+
+    .movie-list li .movie-title {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .movie-list li .movie-meta {
+      color: #888;
+    }
+
+    .movie-list li .showtimes {
+      color: #e94560;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎬 Berlin Cinemas</h1>
+  <span class="badge" id="count">…</span>
+  <span class="updated" id="updated"></span>
+</header>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  // Initialise the map centred on Berlin
+  const map = L.map("map").setView([52.52, 13.405], 12);
+
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+    maxZoom: 19,
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
+  }).addTo(map);
+
+  // Custom red cinema marker
+  const cinemaIcon = L.divIcon({
+    className: "",
+    html: `<div style="
+      background:#e94560;
+      border:2px solid #fff;
+      border-radius:50%;
+      width:14px;height:14px;
+      box-shadow:0 1px 4px rgba(0,0,0,.4);">
+    </div>`,
+    iconSize: [14, 14],
+    iconAnchor: [7, 7],
+    popupAnchor: [0, -10]
+  });
+
+  // Build movie list HTML for a cinema popup
+  function buildMovieList(movies) {
+    if (!movies || movies.length === 0) {
+      return `<p class="no-movies">No screenings today.</p>`;
+    }
+    const items = movies.map(m => {
+      const duration = m.duration_minutes ? `${m.duration_minutes} min · ` : "";
+      const showtimes = m.showtimes.join("  ");
+      return `<li>
+        <span class="movie-title">${m.title}</span>
+        <span class="movie-meta">${duration}<span class="showtimes">${showtimes}</span></span>
+      </li>`;
+    }).join("");
+    return `<ul class="movie-list">${items}</ul>`;
+  }
+
+  // Load cinema data
+  fetch("cinemas.json")
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    })
+    .then(data => {
+      // New format: { fetched_at, date, cinemas: [...] }
+      const cinemas = data.cinemas ?? data;
+
+      document.getElementById("count").textContent = `${cinemas.length} cinemas`;
+
+      // Show fetched_at timestamp from JSON metadata
+      if (data.fetched_at) {
+        const d = new Date(data.fetched_at);
+        document.getElementById("updated").textContent =
+          `Data for ${data.date} · updated ${d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })} UTC`;
+      }
+
+      cinemas.forEach(c => {
+        const address = [c.street, c.postcode].filter(Boolean).join(", ");
+        const kinoheldUrl = `https://www.kinoheld.de/kino/${c.url_slug}/shows`;
+        const movieCount = (c.movies || []).length;
+
+        const popup = `
+          <div class="cinema-popup">
+            <h3>${c.name}</h3>
+            ${address ? `<p>📍 ${address}</p>` : ""}
+            <p>🎬 <strong>${movieCount}</strong> movie${movieCount !== 1 ? "s" : ""} today</p>
+            ${buildMovieList(c.movies)}
+            <a href="${kinoheldUrl}" target="_blank" rel="noopener">
+              Buy tickets on Kinoheld ↗
+            </a>
+          </div>`;
+
+        L.marker([c.latitude, c.longitude], { icon: cinemaIcon })
+          .addTo(map)
+          .bindPopup(popup, { maxWidth: 320 });
+      });
+
+      // Fit map to all markers
+      if (cinemas.length > 0) {
+        const bounds = L.latLngBounds(cinemas.map(c => [c.latitude, c.longitude]));
+        map.fitBounds(bounds, { padding: [30, 30] });
+      }
+    })
+    .catch(err => {
+      console.error("Failed to load cinemas.json:", err);
+      document.getElementById("count").textContent = "data unavailable";
+    });
+</script>
+
+</body>
+</html>
+
