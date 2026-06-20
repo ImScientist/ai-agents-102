@@ -18,206 +18,364 @@
       height: 100vh;
     }
 
-    header {
-      background: #1a1a2e;
-      color: #e0e0e0;
-      padding: 0.6rem 1rem;
+
+
+    /* ── Filter bar ── */
+    #filter-bar {
+      background: #f7f7f9;
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem 1rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
     }
-
-    header h1 {
-      font-size: 1.05rem;
-      font-weight: 600;
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: #444;
       white-space: nowrap;
     }
-
-    header span.badge {
-      background: #e94560;
-      color: white;
-      border-radius: 12px;
-      padding: 0.15rem 0.6rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      white-space: nowrap;
+    .filter-group label { font-weight: 500; }
+    .filter-group input[type="time"] {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.82rem;
+      background: white;
+      cursor: pointer;
     }
 
-    header .updated {
-      margin-left: auto;
-      font-size: 0.72rem;
-      color: #888;
-      white-space: nowrap;
+    /* Movie selector dropdown */
+    .movie-select-wrapper { position: relative; }
+    #movie-select-btn {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 0.25rem 0.75rem 0.25rem 0.5rem;
+      font-size: 0.82rem;
+      background: white;
+      cursor: pointer;
+      min-width: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.4rem;
+      user-select: none;
     }
+    #movie-select-btn:hover { border-color: #e94560; }
+    #movie-select-btn .arrow { font-size: 0.6rem; color: #888; }
 
-    /* On narrow screens: hide the timestamp, shrink padding */
-    @media (max-width: 480px) {
-      header {
-        padding: 0.5rem 0.75rem;
-        gap: 0.5rem;
-      }
-      header h1 { font-size: 0.95rem; }
-      header .updated { display: none; }
+    #movie-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      z-index: 1000;
+      min-width: 260px;
+      max-width: 320px;
+      max-height: 320px;
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
     }
+    #movie-dropdown.open { display: flex; }
 
-    #map { flex: 1; }
-
-    /* Popup styling */
-    .cinema-popup {
-      min-width: 220px;
-      max-width: 300px;
+    #movie-search-input {
+      border: none;
+      border-bottom: 1px solid #eee;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.82rem;
+      outline: none;
+      width: 100%;
     }
-
-    .cinema-popup h3 {
-      font-size: 0.95rem;
-      margin-bottom: 0.35rem;
-      color: #1a1a2e;
-    }
-
-    .cinema-popup p {
-      font-size: 0.8rem;
-      color: #555;
-      margin-bottom: 0.4rem;
-    }
-
-    .cinema-popup a {
-      font-size: 0.8rem;
-      color: #e94560;
-      text-decoration: none;
-    }
-
-    .cinema-popup a:hover { text-decoration: underline; }
-
-    .cinema-popup .no-movies {
-      font-size: 0.8rem;
-      color: #999;
-      font-style: italic;
-      margin-bottom: 0.4rem;
-    }
-
-    .movie-list {
-      list-style: none;
-      margin: 0.4rem 0;
-      padding: 0;
-      max-height: 200px;
+    #movie-options {
       overflow-y: auto;
-      border-top: 1px solid #eee;
+      flex: 1;
     }
-
-    .movie-list li {
-      padding: 0.3rem 0;
-      border-bottom: 1px solid #f3f3f3;
-      font-size: 0.78rem;
+    .movie-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.82rem;
+      cursor: pointer;
       color: #333;
     }
+    .movie-option:hover { background: #f5f5f5; }
+    .movie-option input[type="checkbox"] { accent-color: #e94560; cursor: pointer; }
+    .movie-option.selected { font-weight: 600; color: #1a1a2e; }
 
-    .movie-list li .movie-title {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 0.1rem;
+    #dropdown-actions {
+      border-top: 1px solid #eee;
+      padding: 0.4rem 0.75rem;
+      display: flex;
+      gap: 0.5rem;
     }
-
-    .movie-list li .movie-meta {
-      color: #888;
+    #dropdown-actions button {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: white;
+      cursor: pointer;
     }
+    #dropdown-actions button:hover { background: #f0f0f0; }
 
-    .movie-list li .showtimes {
+    #reset-filters {
+      font-size: 0.78rem;
       color: #e94560;
-      font-weight: 500;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem 0.25rem;
+      text-decoration: underline;
+      white-space: nowrap;
     }
+    #reset-filters:hover { color: #c0334d; }
+
+    @media (max-width: 480px) {
+      #filter-bar { padding: 0.4rem 0.75rem; gap: 0.5rem; }
+      #movie-select-btn { min-width: 130px; }
+    }
+
+    /* ── Map ── */
+    #map { flex: 1; }
+
+    /* ── Popup ── */
+    .cinema-popup { min-width: 220px; max-width: 300px; }
+    .cinema-popup h3 { font-size: 0.95rem; margin-bottom: 0.35rem; color: #1a1a2e; }
+    .cinema-popup p { font-size: 0.8rem; color: #555; margin-bottom: 0.4rem; }
+    .cinema-popup .no-movies { font-size: 0.8rem; color: #999; font-style: italic; margin-bottom: 0.4rem; }
+    .movie-list { list-style: none; margin: 0.4rem 0; padding: 0; max-height: 200px; overflow-y: auto; border-top: 1px solid #eee; }
+    .movie-list li { padding: 0.3rem 0; border-bottom: 1px solid #f3f3f3; font-size: 0.78rem; color: #333; }
+    .movie-list li .movie-title { font-weight: 600; display: block; margin-bottom: 0.1rem; }
+    .movie-list li .movie-meta { color: #888; }
+    .movie-list li .showtimes { color: #e94560; font-weight: 500; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>🎬 Berlin Cinemas</h1>
-  <span class="badge" id="count">…</span>
-  <span class="updated" id="updated"></span>
-</header>
+
+<!-- Filter bar -->
+<div id="filter-bar">
+  <div class="filter-group">
+    <label for="time-filter">🕐 After</label>
+    <input type="time" id="time-filter" value="00:00" />
+  </div>
+
+  <div class="filter-group">
+    <label>🎞️ Movies</label>
+    <div class="movie-select-wrapper">
+      <div id="movie-select-btn">
+        <span id="movie-select-label">All movies</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div id="movie-dropdown">
+        <input type="text" id="movie-search-input" placeholder="Search movies…" />
+        <div id="movie-options"></div>
+        <div id="dropdown-actions">
+          <button id="select-all-btn">Select all</button>
+          <button id="clear-all-btn">Clear all</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="reset-filters">Reset filters</button>
+</div>
 
 <div id="map"></div>
 
-<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-  // Initialise the map centred on Berlin
+  // ── Map setup ──────────────────────────────────────────────────────────────
   const map = L.map("map").setView([52.52, 13.405], 12);
-
   L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
     maxZoom: 19,
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
   }).addTo(map);
 
-  // Custom cinema marker — 🎬 emoji at medium size
   const cinemaIcon = L.divIcon({
     className: "",
-    html: `<div style="
-      font-size:24px;
-      line-height:1;
-      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
-      user-select:none;">🎬</div>`,
-    iconSize: [26, 26],
-    iconAnchor: [13, 13],
-    popupAnchor: [0, -16]
+    html: `<div style="font-size:24px;line-height:1;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.4));user-select:none;">🎬</div>`,
+    iconSize: [26, 26], iconAnchor: [13, 13], popupAnchor: [0, -16]
   });
 
-  // Build movie list HTML for a cinema popup
+  // ── State ──────────────────────────────────────────────────────────────────
+  let allCinemas = [];       // full data from JSON (only those with movies)
+  let allMovieTitles = [];   // sorted unique movie titles
+  let selectedMovies = new Set(); // empty = no filter (show all)
+  let markers = [];          // { cinema, marker } pairs
+
+  // ── Helpers ────────────────────────────────────────────────────────────────
+  function getTimeFilter() {
+    return document.getElementById("time-filter").value || "00:00";
+  }
+
+  function filterMovies(movies) {
+    const afterTime = getTimeFilter();
+    return movies.filter(m => {
+      const matchesTime = m.showtimes.some(t => t >= afterTime);
+      const matchesSelection = selectedMovies.size === 0 || selectedMovies.has(m.title);
+      return matchesTime && matchesSelection;
+    }).map(m => ({
+      ...m,
+      showtimes: m.showtimes.filter(t => t >= afterTime)
+    }));
+  }
+
   function buildMovieList(movies) {
-    if (!movies || movies.length === 0) {
-      return `<p class="no-movies">No screenings today.</p>`;
-    }
+    if (!movies || movies.length === 0) return `<p class="no-movies">No screenings match your filters.</p>`;
     const items = movies.map(m => {
       const duration = m.duration_minutes ? `${m.duration_minutes} min · ` : "";
-      const showtimes = m.showtimes.join("  ");
       return `<li>
         <span class="movie-title">${m.title}</span>
-        <span class="movie-meta">${duration}<span class="showtimes">${showtimes}</span></span>
+        <span class="movie-meta">${duration}<span class="showtimes">${m.showtimes.join("  ")}</span></span>
       </li>`;
     }).join("");
     return `<ul class="movie-list">${items}</ul>`;
   }
 
-  // Load cinema data
-  fetch("cinemas.json")
-    .then(r => {
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      return r.json();
-    })
-    .then(data => {
-      // New format: { fetched_at, date, cinemas: [...] }
-      const cinemas = (data.cinemas ?? data).filter(c => c.movies && c.movies.length > 0);
+  function buildPopup(c, filteredMovies) {
+    const address = [c.street, c.postcode].filter(Boolean).join(", ");
+    const n = filteredMovies.length;
+    return `<div class="cinema-popup">
+      <h3>${c.name}</h3>
+      ${address ? `<p>📍 ${address}</p>` : ""}
+      <p>🎬 <strong>${n}</strong> movie${n !== 1 ? "s" : ""} today</p>
+      ${buildMovieList(filteredMovies)}
+    </div>`;
+  }
 
-      document.getElementById("count").textContent = `${cinemas.length} cinemas`;
-
-      // Show fetched_at timestamp from JSON metadata
-      if (data.fetched_at) {
-        const d = new Date(data.fetched_at);
-        document.getElementById("updated").textContent =
-          `Data for ${data.date} · updated ${d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })} UTC`;
+  // ── Apply filters ──────────────────────────────────────────────────────────
+  function applyFilters() {
+    markers.forEach(({ cinema, marker }) => {
+      const filtered = filterMovies(cinema.movies);
+      if (filtered.length > 0) {
+        marker.setPopupContent(buildPopup(cinema, filtered));
+        if (!map.hasLayer(marker)) marker.addTo(map);
+        visible++;
+      } else {
+        if (map.hasLayer(marker)) map.removeLayer(marker);
       }
+    });
+  }
 
-      cinemas.forEach(c => {
-        const address = [c.street, c.postcode].filter(Boolean).join(", ");
-        const movieCount = (c.movies || []).length;
+  // ── Movie dropdown ─────────────────────────────────────────────────────────
+  const dropdown    = document.getElementById("movie-dropdown");
+  const selectBtn   = document.getElementById("movie-select-btn");
+  const searchInput = document.getElementById("movie-search-input");
+  const optionsEl   = document.getElementById("movie-options");
 
-        const popup = `
-          <div class="cinema-popup">
-            <h3>${c.name}</h3>
-            ${address ? `<p>📍 ${address}</p>` : ""}
-            <p>🎬 <strong>${movieCount}</strong> movie${movieCount !== 1 ? "s" : ""} today</p>
-            ${buildMovieList(c.movies)}
-          </div>`;
+  function updateSelectLabel() {
+    const label = document.getElementById("movie-select-label");
+    if (selectedMovies.size === 0) {
+      label.textContent = "All movies";
+    } else if (selectedMovies.size === 1) {
+      label.textContent = [...selectedMovies][0].slice(0, 22) + (([...selectedMovies][0].length > 22) ? "…" : "");
+    } else {
+      label.textContent = `${selectedMovies.size} movies selected`;
+    }
+  }
 
-        L.marker([c.latitude, c.longitude], { icon: cinemaIcon })
+  function renderOptions(filter = "") {
+    const q = filter.toLowerCase();
+    optionsEl.innerHTML = "";
+    allMovieTitles
+      .filter(t => t.toLowerCase().includes(q))
+      .forEach(title => {
+        const div = document.createElement("div");
+        div.className = "movie-option" + (selectedMovies.has(title) ? " selected" : "");
+        div.innerHTML = `<input type="checkbox" ${selectedMovies.has(title) ? "checked" : ""} /><span>${title}</span>`;
+        div.addEventListener("click", e => {
+          e.stopPropagation();
+          const cb = div.querySelector("input");
+          if (selectedMovies.has(title)) {
+            selectedMovies.delete(title);
+            div.classList.remove("selected");
+            cb.checked = false;
+          } else {
+            selectedMovies.add(title);
+            div.classList.add("selected");
+            cb.checked = true;
+          }
+          updateSelectLabel();
+          applyFilters();
+        });
+        optionsEl.appendChild(div);
+      });
+  }
+
+  selectBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    dropdown.classList.toggle("open");
+    if (dropdown.classList.contains("open")) {
+      searchInput.value = "";
+      renderOptions();
+      searchInput.focus();
+    }
+  });
+
+  searchInput.addEventListener("input", () => renderOptions(searchInput.value));
+
+  document.addEventListener("click", () => dropdown.classList.remove("open"));
+  dropdown.addEventListener("click", e => e.stopPropagation());
+
+  document.getElementById("select-all-btn").addEventListener("click", () => {
+    allMovieTitles.forEach(t => selectedMovies.add(t));
+    renderOptions(searchInput.value);
+    updateSelectLabel();
+    applyFilters();
+  });
+
+  document.getElementById("clear-all-btn").addEventListener("click", () => {
+    selectedMovies.clear();
+    renderOptions(searchInput.value);
+    updateSelectLabel();
+    applyFilters();
+  });
+
+  document.getElementById("reset-filters").addEventListener("click", () => {
+    document.getElementById("time-filter").value = "00:00";
+    selectedMovies.clear();
+    updateSelectLabel();
+    renderOptions();
+    applyFilters();
+  });
+
+  document.getElementById("time-filter").addEventListener("change", applyFilters);
+
+  // ── Load data ──────────────────────────────────────────────────────────────
+  fetch("cinemas.json")
+    .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+    .then(data => {
+      allCinemas = (data.cinemas ?? data).filter(c => c.movies && c.movies.length > 0);
+
+      // Build sorted unique movie title list
+      const titleSet = new Set();
+      allCinemas.forEach(c => c.movies.forEach(m => titleSet.add(m.title)));
+      allMovieTitles = [...titleSet].sort((a, b) => a.localeCompare(b));
+      renderOptions();
+
+
+      // Create markers (initially all visible)
+      allCinemas.forEach(c => {
+        const marker = L.marker([c.latitude, c.longitude], { icon: cinemaIcon })
           .addTo(map)
-          .bindPopup(popup, { maxWidth: 320, closeButton: false });
+          .bindPopup(buildPopup(c, c.movies), { maxWidth: 320, closeButton: false });
+        markers.push({ cinema: c, marker });
       });
 
-      // Fit map to all markers
-      if (cinemas.length > 0) {
-        const bounds = L.latLngBounds(cinemas.map(c => [c.latitude, c.longitude]));
+
+      if (allCinemas.length > 0) {
+        const bounds = L.latLngBounds(allCinemas.map(c => [c.latitude, c.longitude]));
         map.fitBounds(bounds, { padding: [30, 30] });
       }
     })
@@ -229,4 +387,3 @@
 
 </body>
 </html>
-
