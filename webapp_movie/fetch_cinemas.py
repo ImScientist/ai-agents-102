@@ -1,8 +1,8 @@
 """
 fetch_cinemas.py
 Standalone script: fetches all Berlin cinemas from the Kinoheld GraphQL API,
-enriches each cinema with today's movies and showtimes, and writes the result
-to cinemas.json in the same directory.
+enriches each cinema with the program for today and the following two days,
+and writes the result to cinemas.json in the same directory.
 
 Run locally:
     python webapp_movie/fetch_cinemas.py
@@ -15,7 +15,7 @@ import pathlib
 import sys
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 import requests
 
@@ -90,7 +90,7 @@ def fetch_cinemas(city_slug: str = "berlin") -> list[dict]:
                 "url_slug": c.get("urlSlug", ""),
                 "latitude": lat,
                 "longitude": lon,
-                "movies": [],   # filled in later
+                "program": {},  # filled in later: { "YYYY-MM-DD": [movies] }
             }
         )
     return cinemas
@@ -147,7 +147,9 @@ def fetch_shows_for_cinema(cinema_id: str, for_date: date) -> list[dict]:
 
 def main() -> None:
     today = date.today()
-    print(f"Fetching Berlin cinemas from Kinoheld (date: {today})…")
+    dates = [today + timedelta(days=i) for i in range(3)]
+    date_strs = [d.isoformat() for d in dates]
+    print(f"Fetching Berlin cinemas from Kinoheld (dates: {', '.join(date_strs)})…")
 
     try:
         cinemas = fetch_cinemas()
@@ -155,26 +157,35 @@ def main() -> None:
         print(f"ERROR fetching cinemas: {exc}", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Found {len(cinemas)} cinemas. Fetching today's programs in parallel…")
+    print(f"Found {len(cinemas)} cinemas. Fetching programs in parallel…")
 
-    # Fetch shows for all cinemas concurrently
+    # Build a lookup: cinema_id → cinema dict
+    cinema_by_id = {c["id"]: c for c in cinemas}
+
+    # Submit one task per (cinema, date) combination
     with ThreadPoolExecutor(max_workers=8) as executor:
-        future_to_cinema = {
-            executor.submit(fetch_shows_for_cinema, c["id"], today): c
+        future_to_key = {
+            executor.submit(fetch_shows_for_cinema, c["id"], d): (c["id"], d.isoformat())
             for c in cinemas
+            for d in dates
         }
-        for future in as_completed(future_to_cinema):
-            cinema = future_to_cinema[future]
+        for future in as_completed(future_to_key):
+            cinema_id, date_str = future_to_key[future]
+            cinema = cinema_by_id[cinema_id]
             try:
-                cinema["movies"] = future.result()
-                print(f"  ✓ {cinema['name']}: {len(cinema['movies'])} movies")
+                movies = future.result()
+                cinema["program"][date_str] = movies
+                print(f"  ✓ {cinema['name']} [{date_str}]: {len(movies)} movies")
             except Exception as exc:
-                print(f"  ✗ {cinema['name']}: {exc}", file=sys.stderr)
-                cinema["movies"] = []
+                print(f"  ✗ {cinema['name']} [{date_str}]: {exc}", file=sys.stderr)
+                cinema["program"][date_str] = []
+
+    # Keep only cinemas that have at least one show across all days
+    cinemas = [c for c in cinemas if any(c["program"].values())]
 
     output = {
         "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "date": today.isoformat(),
+        "dates": date_strs,
         "cinemas": cinemas,
     }
 

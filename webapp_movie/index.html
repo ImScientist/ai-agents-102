@@ -41,8 +41,8 @@
     .filter-group label { font-weight: 500; }
 
     /* Custom time dropdown — mirrors movie dropdown style */
-    .time-select-wrapper { position: relative; }
-    #time-select-btn {
+    .time-select-wrapper, .date-select-wrapper { position: relative; }
+    #time-select-btn, #date-select-btn {
       border: 1px solid #ccc;
       border-radius: 6px;
       padding: 0.25rem 0.75rem 0.25rem 0.5rem;
@@ -56,10 +56,10 @@
       gap: 0.4rem;
       user-select: none;
     }
-    #time-select-btn:hover { border-color: #e94560; }
-    #time-select-btn .arrow { font-size: 0.6rem; color: #888; }
+    #time-select-btn:hover, #date-select-btn:hover { border-color: #e94560; }
+    #time-select-btn .arrow, #date-select-btn .arrow { font-size: 0.6rem; color: #888; }
 
-    #time-dropdown {
+    #time-dropdown, #date-dropdown {
       display: none;
       position: absolute;
       top: calc(100% + 4px);
@@ -73,16 +73,16 @@
       overflow: hidden;
       flex-direction: column;
     }
-    #time-dropdown.open { display: flex; }
+    #time-dropdown.open, #date-dropdown.open { display: flex; }
 
-    .time-option {
+    .time-option, .date-option {
       padding: 0.4rem 0.75rem;
       font-size: 0.82rem;
       cursor: pointer;
       color: #333;
     }
-    .time-option:hover { background: #f5f5f5; }
-    .time-option.selected { font-weight: 600; color: #1a1a2e; background: #fef0f2; }    /* Movie selector dropdown */
+    .time-option:hover, .date-option:hover { background: #f5f5f5; }
+    .time-option.selected, .date-option.selected { font-weight: 600; color: #1a1a2e; background: #fef0f2; }    /* Movie selector dropdown */
     .movie-select-wrapper { position: relative; }
     #movie-select-btn {
       border: 1px solid #ccc;
@@ -202,6 +202,19 @@
 <!-- Filter bar -->
 <div id="filter-bar">
   <div class="filter-group">
+    <label>📅 Date</label>
+    <div class="date-select-wrapper">
+      <div id="date-select-btn">
+        <span id="date-select-label">Today</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div id="date-dropdown">
+        <!-- populated by JS from data.dates -->
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-group">
     <label>🕐 After</label>
     <div class="time-select-wrapper">
       <div id="time-select-btn">
@@ -272,9 +285,14 @@
   let selectedMovies = new Set();
   let markers = [];
   let selectedTime = "00:00";
+  let selectedDate = "";   // set from data.dates[0] on load
 
   // ── Helpers ────────────────────────────────────────────────────────────────
   function getTimeFilter() { return selectedTime; }
+
+  function moviesForDate(cinema) {
+    return (cinema.program && cinema.program[selectedDate]) || [];
+  }
 
   function filterMovies(movies) {
     const afterTime = getTimeFilter();
@@ -314,7 +332,7 @@
   // ── Apply filters ──────────────────────────────────────────────────────────
   function applyFilters() {
     markers.forEach(({ cinema, marker }) => {
-      const filtered = filterMovies(cinema.movies);
+      const filtered = filterMovies(moviesForDate(cinema));
       if (filtered.length > 0) {
         marker.setPopupContent(buildPopup(cinema, filtered));
         if (!map.hasLayer(marker)) marker.addTo(map);
@@ -323,6 +341,45 @@
       }
     });
   }
+
+  // ── Date dropdown ──────────────────────────────────────────────────────────
+  const dateDropdown = document.getElementById("date-dropdown");
+  const dateSelectBtn = document.getElementById("date-select-btn");
+
+  function dateLabel(dateStr, index) {
+    const d = new Date(dateStr + "T12:00:00");
+    const weekday = d.toLocaleDateString("en-GB", { weekday: "short" });
+    const dayMonth = d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+    if (index === 0) return `Today (${weekday} ${dayMonth})`;
+    if (index === 1) return `Tomorrow (${weekday} ${dayMonth})`;
+    return `${weekday} ${dayMonth}`;
+  }
+
+  function buildDateOptions(dates) {
+    dateDropdown.innerHTML = "";
+    dates.forEach((dateStr, i) => {
+      const div = document.createElement("div");
+      div.className = "date-option" + (i === 0 ? " selected" : "");
+      div.dataset.value = dateStr;
+      div.textContent = dateLabel(dateStr, i);
+      div.addEventListener("click", e => {
+        e.stopPropagation();
+        selectedDate = dateStr;
+        document.getElementById("date-select-label").textContent = dateLabel(dateStr, i);
+        dateDropdown.querySelectorAll(".date-option").forEach(o => o.classList.remove("selected"));
+        div.classList.add("selected");
+        dateDropdown.classList.remove("open");
+        applyFilters();
+      });
+      dateDropdown.appendChild(div);
+    });
+  }
+
+  dateSelectBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    dateDropdown.classList.toggle("open");
+  });
+  dateDropdown.addEventListener("click", e => e.stopPropagation());
 
   // ── Time dropdown ──────────────────────────────────────────────────────────
   const timeDropdown = document.getElementById("time-dropdown");
@@ -346,6 +403,7 @@
   });
 
   document.addEventListener("click", () => {
+    dateDropdown.classList.remove("open");
     timeDropdown.classList.remove("open");
     dropdown.classList.remove("open");
   });
@@ -425,10 +483,20 @@
   });
 
   document.getElementById("reset-filters").addEventListener("click", () => {
+    // Reset date to first available
+    const firstOpt = dateDropdown.querySelector(".date-option");
+    if (firstOpt) {
+      selectedDate = firstOpt.dataset.value;
+      document.getElementById("date-select-label").textContent = firstOpt.textContent;
+      dateDropdown.querySelectorAll(".date-option").forEach((o, i) =>
+        o.classList.toggle("selected", i === 0));
+    }
+    // Reset time
     selectedTime = "00:00";
     document.getElementById("time-select-label").textContent = "Any time";
     timeDropdown.querySelectorAll(".time-option").forEach(o =>
       o.classList.toggle("selected", o.dataset.value === "00:00"));
+    // Reset movie selection
     selectedMovies.clear();
     updateSelectLabel();
     renderOptions();
@@ -440,23 +508,34 @@
   fetch("cinemas.json")
     .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
     .then(data => {
-      allCinemas = (data.cinemas ?? data).filter(c => c.movies && c.movies.length > 0);
+      const dates = data.dates || [];
+      selectedDate = dates[0] || new Date().toISOString().slice(0, 10);
 
-      // Build sorted unique movie title list
+      // Populate date dropdown
+      buildDateOptions(dates);
+      document.getElementById("date-select-label").textContent = dateLabel(selectedDate, 0);
+
+      allCinemas = (data.cinemas ?? data).filter(c =>
+        c.program && Object.values(c.program).some(ms => ms.length > 0)
+      );
+
+      // Build sorted unique movie title list across all dates
       const titleSet = new Set();
-      allCinemas.forEach(c => c.movies.forEach(m => titleSet.add(m.title)));
+      allCinemas.forEach(c =>
+        Object.values(c.program).forEach(ms => ms.forEach(m => titleSet.add(m.title)))
+      );
       allMovieTitles = [...titleSet].sort((a, b) => a.localeCompare(b));
       renderOptions();
 
-
-      // Create markers (initially all visible)
+      // Create markers (initially all visible for selectedDate)
       allCinemas.forEach(c => {
         const marker = L.marker([c.latitude, c.longitude], { icon: cinemaIcon })
           .addTo(map)
-          .bindPopup(buildPopup(c, c.movies), { maxWidth: 320, closeButton: false });
+          .bindPopup(buildPopup(c, moviesForDate(c)), { maxWidth: 320, closeButton: false });
         markers.push({ cinema: c, marker });
       });
 
+      applyFilters();
 
       if (allCinemas.length > 0) {
         const bounds = L.latLngBounds(allCinemas.map(c => [c.latitude, c.longitude]));
