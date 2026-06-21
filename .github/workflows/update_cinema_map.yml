@@ -1,0 +1,45 @@
+name: Update Cinema Map
+
+on:
+  # Run every day at 06:00 UTC
+  schedule:
+    - cron: "0 6 * * *"
+
+  # Allow manual trigger from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read    # checkout only
+  pages: write      # needed to deploy to GitHub Pages
+  id-token: write   # needed for OIDC authentication with Pages
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch cinema data
+        run: python webapp_movie/fetch_cinemas.py
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./webapp_movie   # uploads index.html + cinemas.json
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
