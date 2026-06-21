@@ -320,11 +320,9 @@
 
   function buildPopup(c, filteredMovies) {
     const address = [c.street, c.postcode].filter(Boolean).join(", ");
-    const n = filteredMovies.length;
     return `<div class="cinema-popup">
       <h3>${c.name}</h3>
       ${address ? `<p>📍 ${address}</p>` : ""}
-      <p>🎬 <strong>${n}</strong> movie${n !== 1 ? "s" : ""} today</p>
       ${buildMovieList(filteredMovies)}
     </div>`;
   }
