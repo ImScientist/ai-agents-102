@@ -1,0 +1,3270 @@
+{
+  "fetched_at": "2026-06-21T08:22:30Z",
+  "dates": [
+    "2026-06-21",
+    "2026-06-22",
+    "2026-06-23"
+  ],
+  "cinemas": [
+    {
+      "id": "1290",
+      "name": "Zeughauskino",
+      "street": "Unter den Linden 2",
+      "postcode": "10117",
+      "url_slug": "zeughauskino",
+      "latitude": 52.518211,
+      "longitude": 13.397484,
+      "program": {
+        "2026-06-21": [
+          {
+            "id": "94231",
+            "title": "Über die Jahre",
+            "duration_minutes": 180,
+            "short_description": "Ein bewegendes Zeugnis über Hoffnungen und Kämpfe in bewegten Zeiten.",
+            "showtimes": [
+              "15:30"
+            ]
+          },
+          {
+            "id": "55789",
+            "title": "REVUE UM MITTERNACHT",
+            "duration_minutes": 85,
+            "short_description": "Ein atemloser Thriller aus der düsteren Welt der Mitternachtsschüsse.",
+            "showtimes": [
+              "18:00"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "84165",
+            "title": "Konzert mit Star-Pianist Lang Lang",
+            "duration_minutes": null,
+            "short_description": "",
+            "showtimes": [
+              "19:00"
+            ]
+          }
+        ],
+        "2026-06-23": [
+          {
+            "id": "94239",
+            "title": "CORRESPONDENCES (OmeU)",
+            "duration_minutes": null,
+            "short_description": "",
+            "showtimes": [
+              "19:00"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "2401",
+      "name": "Russisches Haus der Wissenschaft und Kultur",
+      "street": "Friedrichstraße 176",
+      "postcode": "10117",
+      "url_slug": "russisches-haus-der-wissenschaft-und-kultur",
+      "latitude": 52.513401,
+      "longitude": 13.3885,
+      "program": {
+        "2026-06-22": [
+          {
+            "id": "102915",
+            "title": "Sturm auf Festung Brest",
+            "duration_minutes": 138,
+            "short_description": "Im Angesicht der Hölle: Drei Offiziere kämpfen gegen die Übermacht!",
+            "showtimes": [
+              "19:00"
+            ]
+          }
+        ],
+        "2026-06-21": [],
+        "2026-06-23": [
+          {
+            "id": "6a379f452ba21",
+            "title": "Deutsche Residenzen mit russischer Prägung",
+            "duration_minutes": null,
+            "short_description": null,
+            "showtimes": [
+              "18:30"
+            ]
+          },
+          {
+            "id": "6a379f452c505",
+            "title": "Täublinge",
+            "duration_minutes": null,
+            "short_description": null,
+            "showtimes": [
+              "19:00"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "1325",
+      "name": "Acud Kino Berlin",
+      "street": "Veteranenstraße 21",
+      "postcode": "10119",
+      "url_slug": "acud-kino",
+      "latitude": 52.533531,
+      "longitude": 13.40086,
+      "program": {
+        "2026-06-21": [
+          {
+            "id": "90283",
+            "title": "Pferd am Stiel",
+            "duration_minutes": 80,
+            "short_description": "Ein aufregendes Abenteuer auf Steckenpferden, Freundschaft und Herausforderungen!",
+            "showtimes": [
+              "15:00"
+            ]
+          },
+          {
+            "id": "78473",
+            "title": "Die Schatzsuche im Blaumeisental",
+            "duration_minutes": 77,
+            "short_description": "Ein geheimnisvoller Schlüssel entführt Lucie in ein fabelhaftes Abenteuer!",
+            "showtimes": [
+              "16:00"
+            ]
+          },
+          {
+            "id": "83243",
+            "title": "Arco - Eine fantastische Reise durch die Zeiten",
+            "duration_minutes": 88,
+            "short_description": "Ein farbenfrohes Märchen über Freundschaft und die Reise in eine strahlende Zukunft!",
+            "showtimes": [
+              "16:30"
+            ]
+          },
+          {
+            "id": "92425",
+            "title": "Ich verstehe Ihren Unmut",
+            "duration_minutes": 90,
+            "short_description": "Ein harter Job, ein heißer Konflikt – wie weit geht Heike für ihre Ziele?",
+            "showtimes": [
+              "18:00"
+            ]
+          },
+          {
+            "id": "71221",
+            "title": "Extrawurst",
+            "duration_minutes": 100,
+            "short_description": "Ein Grill wird zum Zündfunken für explosive Club-Konflikte!",
+            "showtimes": [
+              "18:15",
+              "20:00"
+            ]
+          },
+          {
+            "id": "92493",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 100,
+            "short_description": "Wenn Schafe ermitteln, wird aus einem Krimi ein flauschiges Abenteuer!",
+            "showtimes": [
+              "20:45"
+            ]
+          }
+        ],
+        "2026-06-23": [
+          {
+            "id": "83931",
+            "title": "Das Flüstern der Wälder",
+            "duration_minutes": 93,
+            "short_description": "Erlebe die magische Verbindung von Mensch und Natur in den geheimnisvollen Wäldern!",
+            "showtimes": [
+              "17:00"
+            ]
+          },
+          {
+            "id": "93427",
+            "title": "The North",
+            "duration_minutes": 131,
+            "short_description": "Niederländisches Drama über zwei beste Freunde, die durch die schottischen Highlands wandern, um ihre Freundschaft wieder aufblühen zu lassen.",
+            "showtimes": [
+              "18:00"
+            ]
+          },
+          {
+            "id": "6a379f454218f",
+            "title": "SAVING SPOONIE D, keine Angabe",
+            "duration_minutes": null,
+            "short_description": null,
+            "showtimes": [
+              "19:00"
+            ]
+          },
+          {
+            "id": "92425",
+            "title": "Ich verstehe Ihren Unmut",
+            "duration_minutes": 90,
+            "short_description": "Ein harter Job, ein heißer Konflikt – wie weit geht Heike für ihre Ziele?",
+            "showtimes": [
+              "20:30"
+            ]
+          },
+          {
+            "id": "71221",
+            "title": "Extrawurst",
+            "duration_minutes": 100,
+            "short_description": "Ein Grill wird zum Zündfunken für explosive Club-Konflikte!",
+            "showtimes": [
+              "21:15"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "99503",
+            "title": "Ein Sommer in Paris",
+            "duration_minutes": 77,
+            "short_description": "Missverständnisse, Magie und ein Hauch von Liebe – ein Sommer, der Leben verändert!",
+            "showtimes": [
+              "16:45"
+            ]
+          },
+          {
+            "id": "80975",
+            "title": "Romería - Das Tagebuch meiner Mutter",
+            "duration_minutes": 114,
+            "short_description": "In einer unbekannten Familie entdeckt Marina die Geheimnisse ihrer Herkunft.",
+            "showtimes": [
+              "18:00"
+            ]
+          },
+          {
+            "id": "92493",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 100,
+            "short_description": "Wenn Schafe ermitteln, wird aus einem Krimi ein flauschiges Abenteuer!",
+            "showtimes": [
+              "18:30"
+            ]
+          },
+          {
+            "id": "93427",
+            "title": "The North",
+            "duration_minutes": 131,
+            "short_description": "Niederländisches Drama über zwei beste Freunde, die durch die schottischen Highlands wandern, um ihre Freundschaft wieder aufblühen zu lassen.",
+            "showtimes": [
+              "20:15"
+            ]
+          },
+          {
+            "id": "71221",
+            "title": "Extrawurst",
+            "duration_minutes": 100,
+            "short_description": "Ein Grill wird zum Zündfunken für explosive Club-Konflikte!",
+            "showtimes": [
+              "20:45"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "163",
+      "name": "Central-Kino Berlin",
+      "street": "Rosenthaler Straße 39",
+      "postcode": "10178",
+      "url_slug": "central-kino",
+      "latitude": 52.524227,
+      "longitude": 13.402718,
+      "program": {
+        "2026-06-21": [
+          {
+            "id": "424617",
+            "title": "Disclosure Day (OmU)",
+            "duration_minutes": 146,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "14:00",
+              "19:30"
+            ]
+          },
+          {
+            "id": "425359",
+            "title": "Kinderfilm des Monats: Paddington in Peru",
+            "duration_minutes": 106,
+            "short_description": "Ein Abenteuer in Peru: Auf der Suche nach Tante Lucy!",
+            "showtimes": [
+              "15:00"
+            ]
+          },
+          {
+            "id": "421985",
+            "title": "Der Teufel trägt Prada 2 (OmU)",
+            "duration_minutes": 119,
+            "short_description": "Im Kampf um Macht und Mittel wird Mode zur Waffe – wer wird triumphieren?",
+            "showtimes": [
+              "17:00"
+            ]
+          },
+          {
+            "id": "424929",
+            "title": "Unearthing Time: Godland (OmU)",
+            "duration_minutes": 143,
+            "short_description": "In einer abgelegenen isländischen Siedlung verliert ein junger Pfarrer den Halt inmitten von Mythen und Märchen.",
+            "showtimes": [
+              "17:30"
+            ]
+          },
+          {
+            "id": "425325",
+            "title": "Unearthing Time: The Love That Remains (OmeU)",
+            "duration_minutes": 110,
+            "short_description": "Ein unvergessliches Drama über Zerbruch und die Liebe, die bleibt.",
+            "showtimes": [
+              "20:30"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "424617",
+            "title": "Disclosure Day (OmU)",
+            "duration_minutes": 146,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "17:00",
+              "20:00"
+            ]
+          },
+          {
+            "id": "424933",
+            "title": "Unearthing Time: Joan of Arc + A Painter (OmeU)",
+            "duration_minutes": 92,
+            "short_description": null,
+            "showtimes": [
+              "18:15"
+            ]
+          },
+          {
+            "id": "425323",
+            "title": "Unearthing Time: The Love That Remains (OmU)",
+            "duration_minutes": 110,
+            "short_description": "Ein unvergessliches Drama über Zerbruch und die Liebe, die bleibt.",
+            "showtimes": [
+              "20:30"
+            ]
+          }
+        ],
+        "2026-06-23": [
+          {
+            "id": "424617",
+            "title": "Disclosure Day (OmU)",
+            "duration_minutes": 146,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "17:00",
+              "20:00"
+            ]
+          },
+          {
+            "id": "425361",
+            "title": "Unearthing Time: Godland (OmeU)",
+            "duration_minutes": 143,
+            "short_description": "In einer abgelegenen isländischen Siedlung verliert ein junger Pfarrer den Halt inmitten von Mythen und Märchen.",
+            "showtimes": [
+              "17:30"
+            ]
+          },
+          {
+            "id": "425325",
+            "title": "Unearthing Time: The Love That Remains (OmeU)",
+            "duration_minutes": 110,
+            "short_description": "Ein unvergessliches Drama über Zerbruch und die Liebe, die bleibt.",
+            "showtimes": [
+              "20:30"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "387",
+      "name": "CineStar Berlin - CUBIX am Alexanderplatz",
+      "street": "Rathausstraße 1",
+      "postcode": "10178",
+      "url_slug": "cinestar-berlin-cubix-am-alexanderplatz",
+      "latitude": 52.520355,
+      "longitude": 13.411903,
+      "program": {
+        "2026-06-21": [
+          {
+            "id": "89091",
+            "title": "Tom und Jerry: Der Verlorene Kompass",
+            "duration_minutes": 104,
+            "short_description": "Ein magischer Kompass, zwei Rivalen und ein Abenteuer quer durch die Zeit!",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "95947",
+            "title": "Die Legende des Wüstenkindes",
+            "duration_minutes": 90,
+            "short_description": "Entdecke das Geheimnis von Hadara – ein Abenteuer zwischen Mensch und Wildnis!",
+            "showtimes": [
+              "11:20"
+            ]
+          },
+          {
+            "id": "83841",
+            "title": "Der Super Mario Galaxy Film",
+            "duration_minutes": 95,
+            "short_description": "Erlebe Marios aufregende Abenteuer im grenzenlosen Universum voller Spaß!",
+            "showtimes": [
+              "11:20",
+              "14:10"
+            ]
+          },
+          {
+            "id": "92849",
+            "title": "Der Wunderweltenbaum",
+            "duration_minutes": 110,
+            "short_description": "„Entdecke magische Welten und erlebe Abenteuer jenseits der Wolken!“",
+            "showtimes": [
+              "11:30"
+            ]
+          },
+          {
+            "id": "89785",
+            "title": "Toy Story 5",
+            "duration_minutes": 90,
+            "short_description": "Wenn Technik die Spielzeit bedroht, sind Woody und Buzz gefordert wie nie!",
+            "showtimes": [
+              "11:30",
+              "13:45",
+              "14:15",
+              "16:45",
+              "17:15"
+            ]
+          },
+          {
+            "id": "90421",
+            "title": "Lustiges Pettersson und Findus Mitmachkino 2 (2026)",
+            "duration_minutes": 60,
+            "short_description": "Erlebe mit Pettersson und Findus ein mitreißendes Abenteuer im Mitmachkino!",
+            "showtimes": [
+              "11:40"
+            ]
+          },
+          {
+            "id": "82467",
+            "title": "Hoppers",
+            "duration_minutes": 105,
+            "short_description": "„Springe in die Tierwelt und entdecke Geheimnisse, die nie vergessen werden!“",
+            "showtimes": [
+              "11:50"
+            ]
+          },
+          {
+            "id": "2153",
+            "title": "Ritter Trenk",
+            "duration_minutes": 80,
+            "short_description": "Ein Bauernjunge, ein Ritterturnier, ein Drachenkampf - ein unvergessliches Abenteuer!",
+            "showtimes": [
+              "12:00",
+              "14:00"
+            ]
+          },
+          {
+            "id": "97685",
+            "title": "Meine Freundin Conni - Abenteuer Mit Kranich Klaus",
+            "duration_minutes": 78,
+            "short_description": "Hilf Conni und Freunden, den verletzten Kranich vor dem Nachbarn zu retten!",
+            "showtimes": [
+              "12:10"
+            ]
+          },
+          {
+            "id": "92493",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 100,
+            "short_description": "Wenn Schafe ermitteln, wird aus einem Krimi ein flauschiges Abenteuer!",
+            "showtimes": [
+              "13:10"
+            ]
+          },
+          {
+            "id": "100625",
+            "title": "Zombies im Zoo",
+            "duration_minutes": 92,
+            "short_description": "Ein Wolf und ein Berglöwe kämpfen gegen Zombie-Zootiere im Überlebenskampf!",
+            "showtimes": [
+              "13:40"
+            ]
+          },
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "14:00",
+              "16:10",
+              "16:40",
+              "19:30",
+              "20:10"
+            ]
+          },
+          {
+            "id": "84421",
+            "title": "Der Teufel trägt Prada 2",
+            "duration_minutes": 119,
+            "short_description": "Im Kampf um Macht und Mittel wird Mode zur Waffe – wer wird triumphieren?",
+            "showtimes": [
+              "14:20"
+            ]
+          },
+          {
+            "id": "74933",
+            "title": "Scary Movie 6",
+            "duration_minutes": 96,
+            "short_description": "Die Wayans sind zurück – kein Klischee wird verschont und alles bleibt spannend!",
+            "showtimes": [
+              "14:30",
+              "17:00",
+              "19:40",
+              "20:20"
+            ]
+          },
+          {
+            "id": "58113",
+            "title": "Michael",
+            "duration_minutes": 127,
+            "short_description": "Erleben Sie das faszinierende Leben des King of Pop hautnah!",
+            "showtimes": [
+              "15:50",
+              "19:00"
+            ]
+          },
+          {
+            "id": "89783",
+            "title": "Star Wars: The Mandalorian and Grogu",
+            "duration_minutes": 132,
+            "short_description": "„Ein neuer Kampf erwartet die Galaxis – Legenden erheben sich, um zu schützen!“",
+            "showtimes": [
+              "16:00",
+              "19:10"
+            ]
+          },
+          {
+            "id": "65919",
+            "title": "Master of the Universe",
+            "duration_minutes": 106,
+            "short_description": "He-Man kämpft für Eternia: Rettet Grayskull vor dem bösen Skeletor!",
+            "showtimes": [
+              "17:20",
+              "19:50"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "17:30",
+              "20:00"
+            ]
+          },
+          {
+            "id": "96011",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "20:30"
+            ]
+          },
+          {
+            "id": "18971",
+            "title": "Der Sparfuchs und das Geheimnis des Kinotags",
+            "duration_minutes": 67,
+            "short_description": "Ein farbenprächtiges Unterwasser-Abenteuer voller Freundschaft, Fußball und einem geheimnisvollen Zauberriff.",
+            "showtimes": [
+              "23:00"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "84421",
+            "title": "Der Teufel trägt Prada 2",
+            "duration_minutes": 119,
+            "short_description": "Im Kampf um Macht und Mittel wird Mode zur Waffe – wer wird triumphieren?",
+            "showtimes": [
+              "13:30",
+              "17:00"
+            ]
+          },
+          {
+            "id": "74933",
+            "title": "Scary Movie 6",
+            "duration_minutes": 96,
+            "short_description": "Die Wayans sind zurück – kein Klischee wird verschont und alles bleibt spannend!",
+            "showtimes": [
+              "13:30",
+              "14:10",
+              "16:20",
+              "17:40",
+              "20:30"
+            ]
+          },
+          {
+            "id": "100625",
+            "title": "Zombies im Zoo",
+            "duration_minutes": 92,
+            "short_description": "Ein Wolf und ein Berglöwe kämpfen gegen Zombie-Zootiere im Überlebenskampf!",
+            "showtimes": [
+              "13:40"
+            ]
+          },
+          {
+            "id": "83841",
+            "title": "Der Super Mario Galaxy Film",
+            "duration_minutes": 95,
+            "short_description": "Erlebe Marios aufregende Abenteuer im grenzenlosen Universum voller Spaß!",
+            "showtimes": [
+              "13:50"
+            ]
+          },
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "14:00",
+              "16:00",
+              "16:30",
+              "19:00",
+              "19:40"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "14:00",
+              "16:50",
+              "20:00"
+            ]
+          },
+          {
+            "id": "65919",
+            "title": "Master of the Universe",
+            "duration_minutes": 106,
+            "short_description": "He-Man kämpft für Eternia: Rettet Grayskull vor dem bösen Skeletor!",
+            "showtimes": [
+              "14:10",
+              "16:00",
+              "19:30"
+            ]
+          },
+          {
+            "id": "92493",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 100,
+            "short_description": "Wenn Schafe ermitteln, wird aus einem Krimi ein flauschiges Abenteuer!",
+            "showtimes": [
+              "14:20"
+            ]
+          },
+          {
+            "id": "89783",
+            "title": "Star Wars: The Mandalorian and Grogu",
+            "duration_minutes": 132,
+            "short_description": "„Ein neuer Kampf erwartet die Galaxis – Legenden erheben sich, um zu schützen!“",
+            "showtimes": [
+              "17:00",
+              "20:10"
+            ]
+          },
+          {
+            "id": "58113",
+            "title": "Michael",
+            "duration_minutes": 127,
+            "short_description": "Erleben Sie das faszinierende Leben des King of Pop hautnah!",
+            "showtimes": [
+              "17:30",
+              "19:20"
+            ]
+          },
+          {
+            "id": "6a379f457342e",
+            "title": "CineSneak - Die Überraschungspreview",
+            "duration_minutes": null,
+            "short_description": null,
+            "showtimes": [
+              "20:00"
+            ]
+          },
+          {
+            "id": "96011",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "20:20"
+            ]
+          }
+        ],
+        "2026-06-23": [
+          {
+            "id": "74933",
+            "title": "Scary Movie 6",
+            "duration_minutes": 96,
+            "short_description": "Die Wayans sind zurück – kein Klischee wird verschont und alles bleibt spannend!",
+            "showtimes": [
+              "13:30",
+              "16:30",
+              "19:20",
+              "20:20"
+            ]
+          },
+          {
+            "id": "100625",
+            "title": "Zombies im Zoo",
+            "duration_minutes": 92,
+            "short_description": "Ein Wolf und ein Berglöwe kämpfen gegen Zombie-Zootiere im Überlebenskampf!",
+            "showtimes": [
+              "13:40"
+            ]
+          },
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "13:40",
+              "16:00",
+              "17:10",
+              "19:30",
+              "20:00"
+            ]
+          },
+          {
+            "id": "83841",
+            "title": "Der Super Mario Galaxy Film",
+            "duration_minutes": 95,
+            "short_description": "Erlebe Marios aufregende Abenteuer im grenzenlosen Universum voller Spaß!",
+            "showtimes": [
+              "13:50"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "14:00",
+              "16:20",
+              "17:00",
+              "20:40"
+            ]
+          },
+          {
+            "id": "84421",
+            "title": "Der Teufel trägt Prada 2",
+            "duration_minutes": 119,
+            "short_description": "Im Kampf um Macht und Mittel wird Mode zur Waffe – wer wird triumphieren?",
+            "showtimes": [
+              "14:10",
+              "16:50"
+            ]
+          },
+          {
+            "id": "92493",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 100,
+            "short_description": "Wenn Schafe ermitteln, wird aus einem Krimi ein flauschiges Abenteuer!",
+            "showtimes": [
+              "14:40"
+            ]
+          },
+          {
+            "id": "65919",
+            "title": "Master of the Universe",
+            "duration_minutes": 106,
+            "short_description": "He-Man kämpft für Eternia: Rettet Grayskull vor dem bösen Skeletor!",
+            "showtimes": [
+              "16:10",
+              "19:50"
+            ]
+          },
+          {
+            "id": "58113",
+            "title": "Michael",
+            "duration_minutes": 127,
+            "short_description": "Erleben Sie das faszinierende Leben des King of Pop hautnah!",
+            "showtimes": [
+              "17:10",
+              "19:40"
+            ]
+          },
+          {
+            "id": "89783",
+            "title": "Star Wars: The Mandalorian and Grogu",
+            "duration_minutes": 132,
+            "short_description": "„Ein neuer Kampf erwartet die Galaxis – Legenden erheben sich, um zu schützen!“",
+            "showtimes": [
+              "17:20",
+              "19:10"
+            ]
+          },
+          {
+            "id": "96011",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "20:30"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "614",
+      "name": "Hackesche Höfe Kino Berlin",
+      "street": "Rosenthaler Straße 40/41/Hof 1",
+      "postcode": "10178",
+      "url_slug": "hackesche-hoefe-kino",
+      "latitude": 52.52478,
+      "longitude": 13.40171,
+      "program": {
+        "2026-06-23": [
+          {
+            "id": "94381",
+            "title": "Die kleine Amélie oder Der Charakter des Regens",
+            "duration_minutes": 78,
+            "short_description": "Ein zauberhafter Weg zur Selbstentdeckung in einem geheimnisvollen Japan.",
+            "showtimes": [
+              "14:45"
+            ]
+          },
+          {
+            "id": "89777",
+            "title": "Das Drama - Noch mal auf Anfang",
+            "duration_minutes": 105,
+            "short_description": "Kurz vor der Hochzeit droht ein Geheimnis, alles zu zerstören.",
+            "showtimes": [
+              "14:45",
+              "22:15"
+            ]
+          },
+          {
+            "id": "93479",
+            "title": "Palästina 36",
+            "duration_minutes": 120,
+            "short_description": "Ein junger Mann kämpft im Schatten des Aufstands um seine Heimat und Identität.",
+            "showtimes": [
+              "15:00"
+            ]
+          },
+          {
+            "id": "92425",
+            "title": "Ich verstehe Ihren Unmut",
+            "duration_minutes": 90,
+            "short_description": "Ein harter Job, ein heißer Konflikt – wie weit geht Heike für ihre Ziele?",
+            "showtimes": [
+              "15:00"
+            ]
+          },
+          {
+            "id": "95947",
+            "title": "Die Legende des Wüstenkindes",
+            "duration_minutes": 90,
+            "short_description": "Entdecke das Geheimnis von Hadara – ein Abenteuer zwischen Mensch und Wildnis!",
+            "showtimes": [
+              "15:15"
+            ]
+          },
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "16:30",
+              "19:30",
+              "22:00"
+            ]
+          },
+          {
+            "id": "95215",
+            "title": "Verflucht Normal",
+            "duration_minutes": 121,
+            "short_description": "Ein Fluch wird zur Stärke: Johns Weg von der Isolation zur Inspiration.",
+            "showtimes": [
+              "17:00"
+            ]
+          },
+          {
+            "id": "93105",
+            "title": "Meine Frau weint",
+            "duration_minutes": 93,
+            "short_description": "Ein Anruf verändert alles: Was steckt hinter den Tränen seiner Frau?",
+            "showtimes": [
+              "17:00"
+            ]
+          },
+          {
+            "id": "96011",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "17:15",
+              "19:45"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "17:30",
+              "19:45",
+              "22:30"
+            ]
+          },
+          {
+            "id": "98217",
+            "title": "The Love That Remains",
+            "duration_minutes": 109,
+            "short_description": "Ein unvergessliches Drama über Zerbruch und die Liebe, die bleibt.",
+            "showtimes": [
+              "19:00"
+            ]
+          },
+          {
+            "id": "58113",
+            "title": "Michael",
+            "duration_minutes": 127,
+            "short_description": "Erleben Sie das faszinierende Leben des King of Pop hautnah!",
+            "showtimes": [
+              "19:30"
+            ]
+          },
+          {
+            "id": "94843",
+            "title": "Good Boy - Wir wollen nur dein Bestes",
+            "duration_minutes": 110,
+            "short_description": "Gefangen zwischen Gewalt und Liebe: Kann Tommy seine dunkle Seite besiegen?",
+            "showtimes": [
+              "21:15"
+            ]
+          },
+          {
+            "id": "99295",
+            "title": "The Furious",
+            "duration_minutes": 113,
+            "short_description": "Auf der Jagd nach Gerechtigkeit: Ein Vater und ein Journalist gehn durch die Hölle!",
+            "showtimes": [
+              "22:15"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "94381",
+            "title": "Die kleine Amélie oder Der Charakter des Regens",
+            "duration_minutes": 78,
+            "short_description": "Ein zauberhafter Weg zur Selbstentdeckung in einem geheimnisvollen Japan.",
+            "showtimes": [
+              "14:45"
+            ]
+          },
+          {
+            "id": "58113",
+            "title": "Michael",
+            "duration_minutes": 127,
+            "short_description": "Erleben Sie das faszinierende Leben des King of Pop hautnah!",
+            "showtimes": [
+              "15:00"
+            ]
+          },
+          {
+            "id": "95947",
+            "title": "Die Legende des Wüstenkindes",
+            "duration_minutes": 90,
+            "short_description": "Entdecke das Geheimnis von Hadara – ein Abenteuer zwischen Mensch und Wildnis!",
+            "showtimes": [
+              "15:00"
+            ]
+          },
+          {
+            "id": "93479",
+            "title": "Palästina 36",
+            "duration_minutes": 120,
+            "short_description": "Ein junger Mann kämpft im Schatten des Aufstands um seine Heimat und Identität.",
+            "showtimes": [
+              "15:00"
+            ]
+          },
+          {
+            "id": "92425",
+            "title": "Ich verstehe Ihren Unmut",
+            "duration_minutes": 90,
+            "short_description": "Ein harter Job, ein heißer Konflikt – wie weit geht Heike für ihre Ziele?",
+            "showtimes": [
+              "15:00"
+            ]
+          },
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "16:30",
+              "19:30",
+              "22:00"
+            ]
+          },
+          {
+            "id": "93105",
+            "title": "Meine Frau weint",
+            "duration_minutes": 93,
+            "short_description": "Ein Anruf verändert alles: Was steckt hinter den Tränen seiner Frau?",
+            "showtimes": [
+              "17:00"
+            ]
+          },
+          {
+            "id": "96011",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "17:15",
+              "22:15"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "17:30",
+              "19:45",
+              "22:30"
+            ]
+          },
+          {
+            "id": "95215",
+            "title": "Verflucht Normal",
+            "duration_minutes": 121,
+            "short_description": "Ein Fluch wird zur Stärke: Johns Weg von der Isolation zur Inspiration.",
+            "showtimes": [
+              "17:45"
+            ]
+          },
+          {
+            "id": "98217",
+            "title": "The Love That Remains",
+            "duration_minutes": 109,
+            "short_description": "Ein unvergessliches Drama über Zerbruch und die Liebe, die bleibt.",
+            "showtimes": [
+              "19:00"
+            ]
+          },
+          {
+            "id": "89777",
+            "title": "Das Drama - Noch mal auf Anfang",
+            "duration_minutes": 105,
+            "short_description": "Kurz vor der Hochzeit droht ein Geheimnis, alles zu zerstören.",
+            "showtimes": [
+              "20:15"
+            ]
+          },
+          {
+            "id": "94843",
+            "title": "Good Boy - Wir wollen nur dein Bestes",
+            "duration_minutes": 110,
+            "short_description": "Gefangen zwischen Gewalt und Liebe: Kann Tommy seine dunkle Seite besiegen?",
+            "showtimes": [
+              "21:15"
+            ]
+          },
+          {
+            "id": "99295",
+            "title": "The Furious",
+            "duration_minutes": 113,
+            "short_description": "Auf der Jagd nach Gerechtigkeit: Ein Vater und ein Journalist gehn durch die Hölle!",
+            "showtimes": [
+              "22:30"
+            ]
+          }
+        ],
+        "2026-06-21": [
+          {
+            "id": "93105",
+            "title": "Meine Frau weint",
+            "duration_minutes": 93,
+            "short_description": "Ein Anruf verändert alles: Was steckt hinter den Tränen seiner Frau?",
+            "showtimes": [
+              "10:45",
+              "17:00"
+            ]
+          },
+          {
+            "id": "92111",
+            "title": "Rose",
+            "duration_minutes": 94,
+            "short_description": "Im Schatten des Krieges kämpft ein Soldat um Liebe, Identität und Akzeptanz.",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "58113",
+            "title": "Michael",
+            "duration_minutes": 127,
+            "short_description": "Erleben Sie das faszinierende Leben des King of Pop hautnah!",
+            "showtimes": [
+              "11:30",
+              "19:15"
+            ]
+          },
+          {
+            "id": "92123",
+            "title": "Kommunist",
+            "duration_minutes": 120,
+            "short_description": "Vom Machtspieler zum Gestrauchelten: Wer ist Egon Krenz wirklich?",
+            "showtimes": [
+              "11:30"
+            ]
+          },
+          {
+            "id": "95947",
+            "title": "Die Legende des Wüstenkindes",
+            "duration_minutes": 90,
+            "short_description": "Entdecke das Geheimnis von Hadara – ein Abenteuer zwischen Mensch und Wildnis!",
+            "showtimes": [
+              "11:30"
+            ]
+          },
+          {
+            "id": "98217",
+            "title": "The Love That Remains",
+            "duration_minutes": 109,
+            "short_description": "Ein unvergessliches Drama über Zerbruch und die Liebe, die bleibt.",
+            "showtimes": [
+              "12:45",
+              "19:00"
+            ]
+          },
+          {
+            "id": "95215",
+            "title": "Verflucht Normal",
+            "duration_minutes": 121,
+            "short_description": "Ein Fluch wird zur Stärke: Johns Weg von der Isolation zur Inspiration.",
+            "showtimes": [
+              "13:00",
+              "16:45"
+            ]
+          },
+          {
+            "id": "99503",
+            "title": "Ein Sommer in Paris",
+            "duration_minutes": 77,
+            "short_description": "Missverständnisse, Magie und ein Hauch von Liebe – ein Sommer, der Leben verändert!",
+            "showtimes": [
+              "13:30"
+            ]
+          },
+          {
+            "id": "92849",
+            "title": "Der Wunderweltenbaum",
+            "duration_minutes": 110,
+            "short_description": "„Entdecke magische Welten und erlebe Abenteuer jenseits der Wolken!“",
+            "showtimes": [
+              "14:15"
+            ]
+          },
+          {
+            "id": "93479",
+            "title": "Palästina 36",
+            "duration_minutes": 120,
+            "short_description": "Ein junger Mann kämpft im Schatten des Aufstands um seine Heimat und Identität.",
+            "showtimes": [
+              "14:15"
+            ]
+          },
+          {
+            "id": "92425",
+            "title": "Ich verstehe Ihren Unmut",
+            "duration_minutes": 90,
+            "short_description": "Ein harter Job, ein heißer Konflikt – wie weit geht Heike für ihre Ziele?",
+            "showtimes": [
+              "15:00"
+            ]
+          },
+          {
+            "id": "89777",
+            "title": "Das Drama - Noch mal auf Anfang",
+            "duration_minutes": 105,
+            "short_description": "Kurz vor der Hochzeit droht ein Geheimnis, alles zu zerstören.",
+            "showtimes": [
+              "15:15",
+              "22:00"
+            ]
+          },
+          {
+            "id": "94381",
+            "title": "Die kleine Amélie oder Der Charakter des Regens",
+            "duration_minutes": 78,
+            "short_description": "Ein zauberhafter Weg zur Selbstentdeckung in einem geheimnisvollen Japan.",
+            "showtimes": [
+              "15:30"
+            ]
+          },
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "16:30",
+              "19:30",
+              "22:00"
+            ]
+          },
+          {
+            "id": "96011",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "17:15",
+              "19:45"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "17:30",
+              "19:45",
+              "22:30"
+            ]
+          },
+          {
+            "id": "94843",
+            "title": "Good Boy - Wir wollen nur dein Bestes",
+            "duration_minutes": 110,
+            "short_description": "Gefangen zwischen Gewalt und Liebe: Kann Tommy seine dunkle Seite besiegen?",
+            "showtimes": [
+              "21:15"
+            ]
+          },
+          {
+            "id": "99295",
+            "title": "The Furious",
+            "duration_minutes": 113,
+            "short_description": "Auf der Jagd nach Gerechtigkeit: Ein Vater und ein Journalist gehn durch die Hölle!",
+            "showtimes": [
+              "22:15"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "670",
+      "name": "Babylon",
+      "street": "Rosa-Luxemburg-Straße 30",
+      "postcode": "10178",
+      "url_slug": "babylon-berlin",
+      "latitude": 52.525936,
+      "longitude": 13.4114,
+      "program": {
+        "2026-06-23": [
+          {
+            "id": "1501559",
+            "title": "85 Jahre deutscher Überfall!: Iwans Kindheit",
+            "duration_minutes": 95,
+            "short_description": null,
+            "showtimes": [
+              "18:00"
+            ]
+          },
+          {
+            "id": "1501563",
+            "title": "85 Jahre deutscher Überfall!: Ein Menschenschicksal",
+            "duration_minutes": 103,
+            "short_description": null,
+            "showtimes": [
+              "18:00"
+            ]
+          },
+          {
+            "id": "1485691",
+            "title": "Ernst-Lubitsch-Preis 2026",
+            "duration_minutes": 240,
+            "short_description": null,
+            "showtimes": [
+              "19:00"
+            ]
+          },
+          {
+            "id": "1503787",
+            "title": "Persepolis",
+            "duration_minutes": 96,
+            "short_description": "Klein, rebellisch und ungewöhnlich: Inmitten des revolutionären Iran entdeckt Marjane ihre eigene Sprache.",
+            "showtimes": [
+              "20:00"
+            ]
+          },
+          {
+            "id": "1503783",
+            "title": "Der Himmel über Berlin",
+            "duration_minutes": 128,
+            "short_description": "Engel verlassen den Himmel, um dem Leben der Sterblichen einen neuen Sinn zu geben.",
+            "showtimes": [
+              "20:00"
+            ]
+          },
+          {
+            "id": "1503801",
+            "title": "Three Amigos: Amores Perros",
+            "duration_minutes": 154,
+            "short_description": null,
+            "showtimes": [
+              "22:00"
+            ]
+          },
+          {
+            "id": "1501543",
+            "title": "Koyaanisqatsi",
+            "duration_minutes": 86,
+            "short_description": "",
+            "showtimes": [
+              "22:30"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "1501559",
+            "title": "85 Jahre deutscher Überfall!: Iwans Kindheit",
+            "duration_minutes": 95,
+            "short_description": null,
+            "showtimes": [
+              "17:30"
+            ]
+          },
+          {
+            "id": "1497899",
+            "title": "85 Jahre deutscher Überfall! Die Kraniche ziehen",
+            "duration_minutes": 97,
+            "short_description": null,
+            "showtimes": [
+              "18:00"
+            ]
+          },
+          {
+            "id": "1501561",
+            "title": "85 Jahre deutscher Überfall!: Die Ballade vom Soldaten",
+            "duration_minutes": 88,
+            "short_description": null,
+            "showtimes": [
+              "18:15"
+            ]
+          },
+          {
+            "id": "1485697",
+            "title": "It’s Always the End of the World",
+            "duration_minutes": 99,
+            "short_description": null,
+            "showtimes": [
+              "19:30"
+            ]
+          },
+          {
+            "id": "1503785",
+            "title": "Kommunist",
+            "duration_minutes": 123,
+            "short_description": "Vom Machtspieler zum Gestrauchelten: Wer ist Egon Krenz wirklich?",
+            "showtimes": [
+              "20:00"
+            ]
+          },
+          {
+            "id": "1497897",
+            "title": "85 Jahre deutscher Überfall! Der Aufstieg",
+            "duration_minutes": 104,
+            "short_description": null,
+            "showtimes": [
+              "20:00"
+            ]
+          },
+          {
+            "id": "1503793",
+            "title": "Cronenberg: The Fly",
+            "duration_minutes": 96,
+            "short_description": null,
+            "showtimes": [
+              "21:30"
+            ]
+          },
+          {
+            "id": "1503801",
+            "title": "Three Amigos: Amores Perros",
+            "duration_minutes": 154,
+            "short_description": null,
+            "showtimes": [
+              "22:15"
+            ]
+          },
+          {
+            "id": "1503799",
+            "title": "Cronenberg: Dead Ringers",
+            "duration_minutes": 116,
+            "short_description": null,
+            "showtimes": [
+              "22:30"
+            ]
+          }
+        ],
+        "2026-06-21": [
+          {
+            "id": "1501553",
+            "title": "IndoGerman Film: Deool Band 2",
+            "duration_minutes": 182,
+            "short_description": null,
+            "showtimes": [
+              "13:00"
+            ]
+          },
+          {
+            "id": "1503785",
+            "title": "Kommunist",
+            "duration_minutes": 123,
+            "short_description": "Vom Machtspieler zum Gestrauchelten: Wer ist Egon Krenz wirklich?",
+            "showtimes": [
+              "13:30"
+            ]
+          },
+          {
+            "id": "1497895",
+            "title": "85 Jahre deutscher Überfall!  Ich war neunzehn",
+            "duration_minutes": 119,
+            "short_description": null,
+            "showtimes": [
+              "14:00"
+            ]
+          },
+          {
+            "id": "1501555",
+            "title": "CinemAperitivo: I vitelloni",
+            "duration_minutes": 100,
+            "short_description": null,
+            "showtimes": [
+              "16:00"
+            ]
+          },
+          {
+            "id": "1497897",
+            "title": "85 Jahre deutscher Überfall! Der Aufstieg",
+            "duration_minutes": 104,
+            "short_description": null,
+            "showtimes": [
+              "16:15"
+            ]
+          },
+          {
+            "id": "1497771",
+            "title": "Roid",
+            "duration_minutes": 109,
+            "short_description": null,
+            "showtimes": [
+              "16:15"
+            ]
+          },
+          {
+            "id": "1501557",
+            "title": "Berlin Indie Film Festival",
+            "duration_minutes": 122,
+            "short_description": null,
+            "showtimes": [
+              "18:00"
+            ]
+          },
+          {
+            "id": "1503791",
+            "title": "Marilyn Monroe: Some Like It Hot",
+            "duration_minutes": 120,
+            "short_description": null,
+            "showtimes": [
+              "18:15"
+            ]
+          },
+          {
+            "id": "1497899",
+            "title": "85 Jahre deutscher Überfall! Die Kraniche ziehen",
+            "duration_minutes": 97,
+            "short_description": null,
+            "showtimes": [
+              "18:30"
+            ]
+          },
+          {
+            "id": "1501559",
+            "title": "85 Jahre deutscher Überfall!: Iwans Kindheit",
+            "duration_minutes": 95,
+            "short_description": null,
+            "showtimes": [
+              "20:30"
+            ]
+          },
+          {
+            "id": "1503795",
+            "title": "Cronenberg: Scanners",
+            "duration_minutes": 103,
+            "short_description": null,
+            "showtimes": [
+              "20:30"
+            ]
+          },
+          {
+            "id": "1503787",
+            "title": "Persepolis",
+            "duration_minutes": 96,
+            "short_description": "Klein, rebellisch und ungewöhnlich: Inmitten des revolutionären Iran entdeckt Marjane ihre eigene Sprache.",
+            "showtimes": [
+              "20:30"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "713",
+      "name": "Kino International",
+      "street": "Karl-Marx-Allee 33",
+      "postcode": "10178",
+      "url_slug": "kino-international",
+      "latitude": 52.52042,
+      "longitude": 13.42298,
+      "program": {
+        "2026-06-21": [
+          {
+            "id": "38675",
+            "title": "Der geteilte Himmel",
+            "duration_minutes": 110,
+            "short_description": "Liebe in Zeiten des Wandels: Zwischen Beruf und Beziehung, Liebe und Ideologie.",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "94353",
+            "title": "Der verlorene Mann",
+            "duration_minutes": 102,
+            "short_description": "Als Hannes Ex-Mann auftaucht, gerät ihre Liebe in ein gefährliches Spiel.",
+            "showtimes": [
+              "14:00"
+            ]
+          },
+          {
+            "id": "92111",
+            "title": "Rose",
+            "duration_minutes": 94,
+            "short_description": "Im Schatten des Krieges kämpft ein Soldat um Liebe, Identität und Akzeptanz.",
+            "showtimes": [
+              "16:30"
+            ]
+          },
+          {
+            "id": "95215",
+            "title": "Verflucht Normal",
+            "duration_minutes": 121,
+            "short_description": "Ein Fluch wird zur Stärke: Johns Weg von der Isolation zur Inspiration.",
+            "showtimes": [
+              "18:45"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "21:30"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "92111",
+            "title": "Rose",
+            "duration_minutes": 94,
+            "short_description": "Im Schatten des Krieges kämpft ein Soldat um Liebe, Identität und Akzeptanz.",
+            "showtimes": [
+              "16:30"
+            ]
+          },
+          {
+            "id": "95215",
+            "title": "Verflucht Normal",
+            "duration_minutes": 121,
+            "short_description": "Ein Fluch wird zur Stärke: Johns Weg von der Isolation zur Inspiration.",
+            "showtimes": [
+              "18:45"
+            ]
+          },
+          {
+            "id": "94899",
+            "title": "The Activist",
+            "duration_minutes": 94,
+            "short_description": "Ein junger Mann riskiert alles, um die Wahrheit hinter einem brutalen Mord zu enthüllen.",
+            "showtimes": [
+              "21:30"
+            ]
+          }
+        ],
+        "2026-06-23": [
+          {
+            "id": "92111",
+            "title": "Rose",
+            "duration_minutes": 94,
+            "short_description": "Im Schatten des Krieges kämpft ein Soldat um Liebe, Identität und Akzeptanz.",
+            "showtimes": [
+              "16:30"
+            ]
+          },
+          {
+            "id": "95215",
+            "title": "Verflucht Normal",
+            "duration_minutes": 121,
+            "short_description": "Ein Fluch wird zur Stärke: Johns Weg von der Isolation zur Inspiration.",
+            "showtimes": [
+              "18:45"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "21:30"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "1839",
+      "name": "open air mitte",
+      "street": "Rosenthaler Straße 39",
+      "postcode": "10178",
+      "url_slug": "central-kino-open-air",
+      "latitude": 52.524227,
+      "longitude": 13.402718,
+      "program": {
+        "2026-06-22": [
+          {
+            "id": "6a379f45bdd6a",
+            "title": "open air: Studio Ghibli: Tales from Earthsea OmeU, ab 0 (OmeU)",
+            "duration_minutes": null,
+            "short_description": null,
+            "showtimes": [
+              "21:00"
+            ]
+          }
+        ],
+        "2026-06-21": [
+          {
+            "id": "14283",
+            "title": "Midsommar",
+            "duration_minutes": 147,
+            "short_description": "Ein idyllischer Sommertrip wird zum albtraumhaften Horrormärchen.",
+            "showtimes": [
+              "21:00"
+            ]
+          }
+        ],
+        "2026-06-23": [
+          {
+            "id": "9307",
+            "title": "Der Himmel über Berlin",
+            "duration_minutes": 128,
+            "short_description": "Ein Engel wählt die Liebe über die Ewigkeit im geteilten Berlin.",
+            "showtimes": [
+              "21:00"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "2933",
+      "name": "Sinema Transtopia Berlin",
+      "street": "Lindowerstr 21/22  (Haus C)",
+      "postcode": "10178",
+      "url_slug": "sinema-transtopia-berlin",
+      "latitude": 52.5231539,
+      "longitude": 13.4199047,
+      "program": {
+        "2026-06-23": [],
+        "2026-06-21": [
+          {
+            "id": "101873",
+            "title": "Crocodile",
+            "duration_minutes": 93,
+            "short_description": "Ein Urlaub am See wird zum Albtraum, als die Krokodilmutter ihre Brut sucht!",
+            "showtimes": [
+              "21:30"
+            ]
+          }
+        ],
+        "2026-06-22": []
+      }
+    },
+    {
+      "id": "1657",
+      "name": "b-ware! OpenAir FMP",
+      "street": "Franz-Mehring-Platz 1 - im Innenhof",
+      "postcode": "10243",
+      "url_slug": "b-ware-openair-fmp",
+      "latitude": 52.512817,
+      "longitude": 13.440274,
+      "program": {
+        "2026-06-21": [],
+        "2026-06-23": [
+          {
+            "id": "92493",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 100,
+            "short_description": "Wenn Schafe ermitteln, wird aus einem Krimi ein flauschiges Abenteuer!",
+            "showtimes": [
+              "21:45"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "89777",
+            "title": "Das Drama - Noch mal auf Anfang",
+            "duration_minutes": 105,
+            "short_description": "Kurz vor der Hochzeit droht ein Geheimnis, alles zu zerstören.",
+            "showtimes": [
+              "21:45"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "2213",
+      "name": "UCI Kinowelt Berlin - Mercedes Platz | Luxe",
+      "street": "Mildred-Harnack-Straße 13",
+      "postcode": "10243",
+      "url_slug": "uci-kinowelt-berlin-mercedes-platz-luxe",
+      "latitude": 52.505421,
+      "longitude": 13.442169,
+      "program": {
+        "2026-06-21": [
+          {
+            "id": "92849",
+            "title": "Der Wunderweltenbaum",
+            "duration_minutes": 110,
+            "short_description": "„Entdecke magische Welten und erlebe Abenteuer jenseits der Wolken!“",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "89783",
+            "title": "Star Wars: The Mandalorian and Grogu",
+            "duration_minutes": 132,
+            "short_description": "„Ein neuer Kampf erwartet die Galaxis – Legenden erheben sich, um zu schützen!“",
+            "showtimes": [
+              "11:00",
+              "14:00",
+              "17:10",
+              "20:20"
+            ]
+          },
+          {
+            "id": "101533",
+            "title": "Savage House",
+            "duration_minutes": 114,
+            "short_description": "Ein sündhaftes Aufeinandertreffen, das Ruhm, Ehre und Geheimnisse enthüllt!",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "102077",
+            "title": "Main Vaapas Aaunga",
+            "duration_minutes": null,
+            "short_description": "Eine epische Reise durch die Zeit, wo verlorene Liebe nie vergeht.",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "99295",
+            "title": "The Furious",
+            "duration_minutes": 113,
+            "short_description": "Auf der Jagd nach Gerechtigkeit: Ein Vater und ein Journalist gehn durch die Hölle!",
+            "showtimes": [
+              "11:00",
+              "19:45",
+              "20:00",
+              "20:10"
+            ]
+          },
+          {
+            "id": "95215",
+            "title": "Verflucht Normal",
+            "duration_minutes": 121,
+            "short_description": "Ein Fluch wird zur Stärke: Johns Weg von der Isolation zur Inspiration.",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "101767",
+            "title": "Cocktail 2",
+            "duration_minutes": null,
+            "short_description": "",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "84421",
+            "title": "Der Teufel trägt Prada 2",
+            "duration_minutes": 119,
+            "short_description": "Im Kampf um Macht und Mittel wird Mode zur Waffe – wer wird triumphieren?",
+            "showtimes": [
+              "11:00",
+              "14:00",
+              "17:00"
+            ]
+          },
+          {
+            "id": "96011",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "11:00",
+              "14:00",
+              "17:00",
+              "20:00"
+            ]
+          },
+          {
+            "id": "92493",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 100,
+            "short_description": "Wenn Schafe ermitteln, wird aus einem Krimi ein flauschiges Abenteuer!",
+            "showtimes": [
+              "11:20",
+              "14:10",
+              "17:00"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "11:20",
+              "14:00",
+              "16:50",
+              "18:00",
+              "20:00",
+              "20:50"
+            ]
+          },
+          {
+            "id": "94843",
+            "title": "Good Boy - Wir wollen nur dein Bestes",
+            "duration_minutes": 110,
+            "short_description": "Gefangen zwischen Gewalt und Liebe: Kann Tommy seine dunkle Seite besiegen?",
+            "showtimes": [
+              "11:30"
+            ]
+          },
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "12:00",
+              "14:00",
+              "15:30",
+              "17:25",
+              "19:00",
+              "19:50"
+            ]
+          },
+          {
+            "id": "74933",
+            "title": "Scary Movie 6",
+            "duration_minutes": 96,
+            "short_description": "Die Wayans sind zurück – kein Klischee wird verschont und alles bleibt spannend!",
+            "showtimes": [
+              "12:40",
+              "15:20",
+              "18:00",
+              "20:40"
+            ]
+          },
+          {
+            "id": "65919",
+            "title": "Master of the Universe",
+            "duration_minutes": 106,
+            "short_description": "He-Man kämpft für Eternia: Rettet Grayskull vor dem bösen Skeletor!",
+            "showtimes": [
+              "13:40",
+              "16:30",
+              "19:45"
+            ]
+          },
+          {
+            "id": "83841",
+            "title": "Der Super Mario Galaxy Film",
+            "duration_minutes": 95,
+            "short_description": "Erlebe Marios aufregende Abenteuer im grenzenlosen Universum voller Spaß!",
+            "showtimes": [
+              "14:00"
+            ]
+          },
+          {
+            "id": "89785",
+            "title": "Toy Story 5",
+            "duration_minutes": 90,
+            "short_description": "Wenn Technik die Spielzeit bedroht, sind Woody und Buzz gefordert wie nie!",
+            "showtimes": [
+              "14:15",
+              "17:15"
+            ]
+          },
+          {
+            "id": "97685",
+            "title": "Meine Freundin Conni - Abenteuer Mit Kranich Klaus",
+            "duration_minutes": 78,
+            "short_description": "Hilf Conni und Freunden, den verletzten Kranich vor dem Nachbarn zu retten!",
+            "showtimes": [
+              "14:15"
+            ]
+          },
+          {
+            "id": "95947",
+            "title": "Die Legende des Wüstenkindes",
+            "duration_minutes": 90,
+            "short_description": "Entdecke das Geheimnis von Hadara – ein Abenteuer zwischen Mensch und Wildnis!",
+            "showtimes": [
+              "14:45"
+            ]
+          },
+          {
+            "id": "58113",
+            "title": "Michael",
+            "duration_minutes": 127,
+            "short_description": "Erleben Sie das faszinierende Leben des King of Pop hautnah!",
+            "showtimes": [
+              "14:50",
+              "16:40"
+            ]
+          },
+          {
+            "id": "101749",
+            "title": "SURFILMUSIC",
+            "duration_minutes": null,
+            "short_description": "",
+            "showtimes": [
+              "17:00"
+            ]
+          },
+          {
+            "id": "89179",
+            "title": "LOL 2.0",
+            "duration_minutes": 105,
+            "short_description": "Mit 55 neuem Leben: Wenn das Nest voller Überraschungen ist!",
+            "showtimes": [
+              "17:15"
+            ]
+          },
+          {
+            "id": "97665",
+            "title": "Guru",
+            "duration_minutes": 126,
+            "short_description": "Hinter dem strahlenden Guru verbirgt sich ein düsteres Geheimnis.",
+            "showtimes": [
+              "20:00"
+            ]
+          },
+          {
+            "id": "96069",
+            "title": "In the Grey",
+            "duration_minutes": 97,
+            "short_description": "Drei Profis, ein Diktator und ein Wettlauf gegen die Zeit: Wer überlebt das Chaos?",
+            "showtimes": [
+              "20:10"
+            ]
+          },
+          {
+            "id": "98493",
+            "title": "Passenger",
+            "duration_minutes": 94,
+            "short_description": "Ein Unfall, ein Fluch – ihr Van-Life verwandelt sich in einen grausamen Albtraum.",
+            "showtimes": [
+              "20:50"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "13:45",
+              "14:00",
+              "17:05",
+              "17:25",
+              "19:50",
+              "20:30"
+            ]
+          },
+          {
+            "id": "65919",
+            "title": "Master of the Universe",
+            "duration_minutes": 106,
+            "short_description": "He-Man kämpft für Eternia: Rettet Grayskull vor dem bösen Skeletor!",
+            "showtimes": [
+              "14:00",
+              "16:30",
+              "19:45"
+            ]
+          },
+          {
+            "id": "83841",
+            "title": "Der Super Mario Galaxy Film",
+            "duration_minutes": 95,
+            "short_description": "Erlebe Marios aufregende Abenteuer im grenzenlosen Universum voller Spaß!",
+            "showtimes": [
+              "14:00"
+            ]
+          },
+          {
+            "id": "96011",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "14:00",
+              "17:00",
+              "20:00"
+            ]
+          },
+          {
+            "id": "84421",
+            "title": "Der Teufel trägt Prada 2",
+            "duration_minutes": 119,
+            "short_description": "Im Kampf um Macht und Mittel wird Mode zur Waffe – wer wird triumphieren?",
+            "showtimes": [
+              "14:00",
+              "17:00"
+            ]
+          },
+          {
+            "id": "89783",
+            "title": "Star Wars: The Mandalorian and Grogu",
+            "duration_minutes": 132,
+            "short_description": "„Ein neuer Kampf erwartet die Galaxis – Legenden erheben sich, um zu schützen!“",
+            "showtimes": [
+              "14:00",
+              "17:10",
+              "20:20"
+            ]
+          },
+          {
+            "id": "90801",
+            "title": "Nürnberg",
+            "duration_minutes": 148,
+            "short_description": "In den Schatten des Bösen: Ein Psychiater riskiert alles für die Wahrheit.",
+            "showtimes": [
+              "14:00"
+            ]
+          },
+          {
+            "id": "92493",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 100,
+            "short_description": "Wenn Schafe ermitteln, wird aus einem Krimi ein flauschiges Abenteuer!",
+            "showtimes": [
+              "14:10",
+              "17:20"
+            ]
+          },
+          {
+            "id": "97685",
+            "title": "Meine Freundin Conni - Abenteuer Mit Kranich Klaus",
+            "duration_minutes": 78,
+            "short_description": "Hilf Conni und Freunden, den verletzten Kranich vor dem Nachbarn zu retten!",
+            "showtimes": [
+              "14:15"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "14:20",
+              "17:10",
+              "18:00",
+              "20:00",
+              "20:10",
+              "20:50"
+            ]
+          },
+          {
+            "id": "95947",
+            "title": "Die Legende des Wüstenkindes",
+            "duration_minutes": 90,
+            "short_description": "Entdecke das Geheimnis von Hadara – ein Abenteuer zwischen Mensch und Wildnis!",
+            "showtimes": [
+              "14:30"
+            ]
+          },
+          {
+            "id": "58113",
+            "title": "Michael",
+            "duration_minutes": 127,
+            "short_description": "Erleben Sie das faszinierende Leben des King of Pop hautnah!",
+            "showtimes": [
+              "14:50",
+              "16:40",
+              "19:50"
+            ]
+          },
+          {
+            "id": "74933",
+            "title": "Scary Movie 6",
+            "duration_minutes": 96,
+            "short_description": "Die Wayans sind zurück – kein Klischee wird verschont und alles bleibt spannend!",
+            "showtimes": [
+              "15:20",
+              "17:30",
+              "18:00",
+              "20:50"
+            ]
+          },
+          {
+            "id": "89179",
+            "title": "LOL 2.0",
+            "duration_minutes": 105,
+            "short_description": "Mit 55 neuem Leben: Wenn das Nest voller Überraschungen ist!",
+            "showtimes": [
+              "17:00"
+            ]
+          },
+          {
+            "id": "99295",
+            "title": "The Furious",
+            "duration_minutes": 113,
+            "short_description": "Auf der Jagd nach Gerechtigkeit: Ein Vater und ein Journalist gehn durch die Hölle!",
+            "showtimes": [
+              "17:00",
+              "20:10"
+            ]
+          },
+          {
+            "id": "97665",
+            "title": "Guru",
+            "duration_minutes": 126,
+            "short_description": "Hinter dem strahlenden Guru verbirgt sich ein düsteres Geheimnis.",
+            "showtimes": [
+              "19:45"
+            ]
+          },
+          {
+            "id": "83831",
+            "title": "Der Astronaut - Project Hail Mary",
+            "duration_minutes": 156,
+            "short_description": "Allein im All: Ein Überleben entscheidet über das Schicksal der Menschheit.",
+            "showtimes": [
+              "19:50"
+            ]
+          },
+          {
+            "id": "6a379f466c605",
+            "title": "Überraschungspremiere",
+            "duration_minutes": null,
+            "short_description": null,
+            "showtimes": [
+              "20:30"
+            ]
+          }
+        ],
+        "2026-06-23": [
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "13:45",
+              "14:00",
+              "17:05",
+              "17:25",
+              "19:50",
+              "20:30"
+            ]
+          },
+          {
+            "id": "65919",
+            "title": "Master of the Universe",
+            "duration_minutes": 106,
+            "short_description": "He-Man kämpft für Eternia: Rettet Grayskull vor dem bösen Skeletor!",
+            "showtimes": [
+              "14:00",
+              "16:30",
+              "19:45"
+            ]
+          },
+          {
+            "id": "89783",
+            "title": "Star Wars: The Mandalorian and Grogu",
+            "duration_minutes": 132,
+            "short_description": "„Ein neuer Kampf erwartet die Galaxis – Legenden erheben sich, um zu schützen!“",
+            "showtimes": [
+              "14:00",
+              "17:10",
+              "20:20"
+            ]
+          },
+          {
+            "id": "84421",
+            "title": "Der Teufel trägt Prada 2",
+            "duration_minutes": 119,
+            "short_description": "Im Kampf um Macht und Mittel wird Mode zur Waffe – wer wird triumphieren?",
+            "showtimes": [
+              "14:00",
+              "17:00"
+            ]
+          },
+          {
+            "id": "95215",
+            "title": "Verflucht Normal",
+            "duration_minutes": 121,
+            "short_description": "Ein Fluch wird zur Stärke: Johns Weg von der Isolation zur Inspiration.",
+            "showtimes": [
+              "14:00"
+            ]
+          },
+          {
+            "id": "96011",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "14:00",
+              "17:00",
+              "20:00"
+            ]
+          },
+          {
+            "id": "83841",
+            "title": "Der Super Mario Galaxy Film",
+            "duration_minutes": 95,
+            "short_description": "Erlebe Marios aufregende Abenteuer im grenzenlosen Universum voller Spaß!",
+            "showtimes": [
+              "14:00"
+            ]
+          },
+          {
+            "id": "92493",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 100,
+            "short_description": "Wenn Schafe ermitteln, wird aus einem Krimi ein flauschiges Abenteuer!",
+            "showtimes": [
+              "14:10",
+              "17:20"
+            ]
+          },
+          {
+            "id": "97685",
+            "title": "Meine Freundin Conni - Abenteuer Mit Kranich Klaus",
+            "duration_minutes": 78,
+            "short_description": "Hilf Conni und Freunden, den verletzten Kranich vor dem Nachbarn zu retten!",
+            "showtimes": [
+              "14:15"
+            ]
+          },
+          {
+            "id": "99129",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "14:20",
+              "17:10",
+              "18:00",
+              "20:00",
+              "20:50"
+            ]
+          },
+          {
+            "id": "95947",
+            "title": "Die Legende des Wüstenkindes",
+            "duration_minutes": 90,
+            "short_description": "Entdecke das Geheimnis von Hadara – ein Abenteuer zwischen Mensch und Wildnis!",
+            "showtimes": [
+              "14:30"
+            ]
+          },
+          {
+            "id": "58113",
+            "title": "Michael",
+            "duration_minutes": 127,
+            "short_description": "Erleben Sie das faszinierende Leben des King of Pop hautnah!",
+            "showtimes": [
+              "14:50",
+              "16:40",
+              "19:50"
+            ]
+          },
+          {
+            "id": "74933",
+            "title": "Scary Movie 6",
+            "duration_minutes": 96,
+            "short_description": "Die Wayans sind zurück – kein Klischee wird verschont und alles bleibt spannend!",
+            "showtimes": [
+              "15:20",
+              "17:10",
+              "18:00",
+              "20:40"
+            ]
+          },
+          {
+            "id": "89179",
+            "title": "LOL 2.0",
+            "duration_minutes": 105,
+            "short_description": "Mit 55 neuem Leben: Wenn das Nest voller Überraschungen ist!",
+            "showtimes": [
+              "17:00"
+            ]
+          },
+          {
+            "id": "99295",
+            "title": "The Furious",
+            "duration_minutes": 113,
+            "short_description": "Auf der Jagd nach Gerechtigkeit: Ein Vater und ein Journalist gehn durch die Hölle!",
+            "showtimes": [
+              "17:00",
+              "20:10"
+            ]
+          },
+          {
+            "id": "97665",
+            "title": "Guru",
+            "duration_minutes": 126,
+            "short_description": "Hinter dem strahlenden Guru verbirgt sich ein düsteres Geheimnis.",
+            "showtimes": [
+              "19:45"
+            ]
+          },
+          {
+            "id": "87653",
+            "title": "The History of Sound",
+            "duration_minutes": 128,
+            "short_description": "Zwei Musikstudenten auf einer Reise zur Entdeckung verlorener Klänge.",
+            "showtimes": [
+              "19:45"
+            ]
+          },
+          {
+            "id": "83831",
+            "title": "Der Astronaut - Project Hail Mary",
+            "duration_minutes": 156,
+            "short_description": "Allein im All: Ein Überleben entscheidet über das Schicksal der Menschheit.",
+            "showtimes": [
+              "19:50"
+            ]
+          },
+          {
+            "id": "98493",
+            "title": "Passenger",
+            "duration_minutes": 94,
+            "short_description": "Ein Unfall, ein Fluch – ihr Van-Life verwandelt sich in einen grausamen Albtraum.",
+            "showtimes": [
+              "20:50"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "108",
+      "name": "b-ware! Ladenkino",
+      "street": "Gärtnerstraße 19",
+      "postcode": "10245",
+      "url_slug": "b-ware-ladenkino",
+      "latitude": 52.511948,
+      "longitude": 13.461576,
+      "program": {
+        "2026-06-21": [
+          {
+            "id": "136797",
+            "title": "Iron Maiden: Burning Ambition",
+            "duration_minutes": 106,
+            "short_description": "Entdecken Sie die legendäre Reise von Iron Maiden und ihrer brennenden Leidenschaft!",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "136501",
+            "title": "Verflucht Normal",
+            "duration_minutes": 121,
+            "short_description": "Ein Fluch wird zur Stärke: Johns Weg von der Isolation zur Inspiration.",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "138091",
+            "title": "Im Reich der Sinne",
+            "duration_minutes": 109,
+            "short_description": "In den Schatten der Lust entfaltet sich eine Liebe zwischen Schmerz und Begierde.",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "137057",
+            "title": "Palästina 36",
+            "duration_minutes": 120,
+            "short_description": "Ein junger Mann kämpft im Schatten des Aufstands um seine Heimat und Identität.",
+            "showtimes": [
+              "12:45"
+            ]
+          },
+          {
+            "id": "137687",
+            "title": "Good Boy - Wir wollen nur dein Bestes",
+            "duration_minutes": 110,
+            "short_description": "Gefangen zwischen Gewalt und Liebe: Kann Tommy seine dunkle Seite besiegen?",
+            "showtimes": [
+              "12:45"
+            ]
+          },
+          {
+            "id": "136497",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 100,
+            "short_description": "Wenn Schafe ermitteln, wird aus einem Krimi ein flauschiges Abenteuer!",
+            "showtimes": [
+              "13:00"
+            ]
+          },
+          {
+            "id": "136795",
+            "title": "Die Legende des Wüstenkindes",
+            "duration_minutes": 90,
+            "short_description": "Entdecke das Geheimnis von Hadara – ein Abenteuer zwischen Mensch und Wildnis!",
+            "showtimes": [
+              "14:35"
+            ]
+          },
+          {
+            "id": "136245",
+            "title": "Rose",
+            "duration_minutes": 94,
+            "short_description": "Im Schatten des Krieges kämpft ein Soldat um Liebe, Identität und Akzeptanz.",
+            "showtimes": [
+              "14:45"
+            ]
+          },
+          {
+            "id": "134635",
+            "title": "Hoppers",
+            "duration_minutes": 105,
+            "short_description": "„Springe in die Tierwelt und entdecke Geheimnisse, die nie vergessen werden!“",
+            "showtimes": [
+              "14:45"
+            ]
+          },
+          {
+            "id": "138097",
+            "title": "Die kleine Amélie oder Der Charakter des Regens",
+            "duration_minutes": 78,
+            "short_description": "Ein Zauber aus Kindheit und Verlust – ein Abenteuer, das das Herz berührt.",
+            "showtimes": [
+              "16:10"
+            ]
+          },
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "16:20",
+              "19:05"
+            ]
+          },
+          {
+            "id": "138373",
+            "title": "Das Los des Fremden",
+            "duration_minutes": 103,
+            "short_description": "Inmitten des Krieges vereinen Schicksale fünf Familien über alle Kontinente.",
+            "showtimes": [
+              "16:30"
+            ]
+          },
+          {
+            "id": "138085",
+            "title": "Zombies im Zoo",
+            "duration_minutes": 92,
+            "short_description": "Ein Wolf und ein Berglöwe kämpfen gegen Zombie-Zootiere im Überlebenskampf!",
+            "showtimes": [
+              "17:30"
+            ]
+          },
+          {
+            "id": "138375",
+            "title": "The Love That Remains",
+            "duration_minutes": 109,
+            "short_description": "Ein unvergessliches Drama über Zerbruch und die Liebe, die bleibt.",
+            "showtimes": [
+              "18:20"
+            ]
+          },
+          {
+            "id": "135003",
+            "title": "Das Drama - Noch mal auf Anfang",
+            "duration_minutes": 105,
+            "short_description": "Kurz vor der Hochzeit droht ein Geheimnis, alles zu zerstören.",
+            "showtimes": [
+              "18:45"
+            ]
+          },
+          {
+            "id": "138093",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "20:15",
+              "22:40"
+            ]
+          },
+          {
+            "id": "138367",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "20:30"
+            ]
+          },
+          {
+            "id": "97689",
+            "title": "Gorgonà",
+            "duration_minutes": 95,
+            "short_description": "Im Chaos der Zukunft kämpft eine junge Frau für Freiheit und Hoffnung.",
+            "showtimes": [
+              "21:30"
+            ]
+          },
+          {
+            "id": "138095",
+            "title": "Obsession - Du sollst mich lieben",
+            "duration_minutes": 108,
+            "short_description": "Von der sehnsüchtigen Liebe zur besessenen Angst – ein fesselnder Albtraum!",
+            "showtimes": [
+              "22:10"
+            ]
+          },
+          {
+            "id": "94611",
+            "title": "Do You Love Me",
+            "duration_minutes": 75,
+            "short_description": "Ein poetisches Portrait des Libanon: Musik, Erinnerung und Sehnsucht vereint.",
+            "showtimes": [
+              "23:05"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "96253",
+            "title": "Bollwerk",
+            "duration_minutes": 60,
+            "short_description": "Zwischen Protest und Angst: Der Kampf gegen die Rechte im ländlichen Osten!",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "136509",
+            "title": "Das Gewicht der Welt",
+            "duration_minutes": 94,
+            "short_description": "Wissenschaft trifft Aktivismus: Drei Forscher:innen tragen das Gewicht der Welt.",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "136249",
+            "title": "Lee Cronin's The Mummy",
+            "duration_minutes": 136,
+            "short_description": "Erlebe, wie das zeitlose Böse in der modernen Welt erwacht!",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "134133",
+            "title": "Der Astronaut - Project Hail Mary",
+            "duration_minutes": 156,
+            "short_description": "Allein im All: Ein Überleben entscheidet über das Schicksal der Menschheit.",
+            "showtimes": [
+              "12:00"
+            ]
+          },
+          {
+            "id": "136799",
+            "title": "Roya",
+            "duration_minutes": 92,
+            "short_description": "Zwischen Freiheit und Gefangenschaft: Ein verzweifelter Kampf um die Wahrheit.",
+            "showtimes": [
+              "12:40"
+            ]
+          },
+          {
+            "id": "136505",
+            "title": "Nürnberg",
+            "duration_minutes": 148,
+            "short_description": "In den Schatten des Bösen: Ein Psychiater riskiert alles für die Wahrheit.",
+            "showtimes": [
+              "13:30"
+            ]
+          },
+          {
+            "id": "132697",
+            "title": "Das Flüstern der Wälder",
+            "duration_minutes": 93,
+            "short_description": "Erlebe die magische Verbindung von Mensch und Natur in den geheimnisvollen Wäldern!",
+            "showtimes": [
+              "14:20"
+            ]
+          },
+          {
+            "id": "135961",
+            "title": "Rosebush Pruning",
+            "duration_minutes": 97,
+            "short_description": "Ein Familiengeheimnis bedroht den idyllischen Traum in der spanischen Villa.",
+            "showtimes": [
+              "14:40"
+            ]
+          },
+          {
+            "id": "138097",
+            "title": "Die kleine Amélie oder Der Charakter des Regens",
+            "duration_minutes": 78,
+            "short_description": "Ein Zauber aus Kindheit und Verlust – ein Abenteuer, das das Herz berührt.",
+            "showtimes": [
+              "16:10"
+            ]
+          },
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "16:20",
+              "19:05"
+            ]
+          },
+          {
+            "id": "138373",
+            "title": "Das Los des Fremden",
+            "duration_minutes": 103,
+            "short_description": "Inmitten des Krieges vereinen Schicksale fünf Familien über alle Kontinente.",
+            "showtimes": [
+              "16:30"
+            ]
+          },
+          {
+            "id": "136245",
+            "title": "Rose",
+            "duration_minutes": 94,
+            "short_description": "Im Schatten des Krieges kämpft ein Soldat um Liebe, Identität und Akzeptanz.",
+            "showtimes": [
+              "17:30"
+            ]
+          },
+          {
+            "id": "138375",
+            "title": "The Love That Remains",
+            "duration_minutes": 109,
+            "short_description": "Ein unvergessliches Drama über Zerbruch und die Liebe, die bleibt.",
+            "showtimes": [
+              "18:20"
+            ]
+          },
+          {
+            "id": "135003",
+            "title": "Das Drama - Noch mal auf Anfang",
+            "duration_minutes": 105,
+            "short_description": "Kurz vor der Hochzeit droht ein Geheimnis, alles zu zerstören.",
+            "showtimes": [
+              "18:45"
+            ]
+          },
+          {
+            "id": "138093",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "20:15",
+              "22:40"
+            ]
+          },
+          {
+            "id": "138367",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "20:30"
+            ]
+          },
+          {
+            "id": "97689",
+            "title": "Gorgonà",
+            "duration_minutes": 95,
+            "short_description": "Im Chaos der Zukunft kämpft eine junge Frau für Freiheit und Hoffnung.",
+            "showtimes": [
+              "21:30"
+            ]
+          },
+          {
+            "id": "134139",
+            "title": "Good Luck, Have Fun, Don't Die",
+            "duration_minutes": 133,
+            "short_description": "Ein mysteriöser Besucher führt eine Gruppe auf eine schicksalhafte Mission!",
+            "showtimes": [
+              "22:10"
+            ]
+          },
+          {
+            "id": "94611",
+            "title": "Do You Love Me",
+            "duration_minutes": 75,
+            "short_description": "Ein poetisches Portrait des Libanon: Musik, Erinnerung und Sehnsucht vereint.",
+            "showtimes": [
+              "23:05"
+            ]
+          }
+        ],
+        "2026-06-23": [
+          {
+            "id": "133449",
+            "title": "Gelbe Briefe",
+            "duration_minutes": 128,
+            "short_description": "Ein neuer Ort, alte Träume – können Liebe und Familie wirklich überstehen?",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "138375",
+            "title": "The Love That Remains",
+            "duration_minutes": 109,
+            "short_description": "Ein unvergessliches Drama über Zerbruch und die Liebe, die bleibt.",
+            "showtimes": [
+              "11:00",
+              "18:20"
+            ]
+          },
+          {
+            "id": "132267",
+            "title": "Wuthering Heights - Sturmhöhe",
+            "duration_minutes": 136,
+            "short_description": "„Leidenschaft und Rache: Heathcliffs geheime Liebe zu Cathy entbrennt!“",
+            "showtimes": [
+              "11:00"
+            ]
+          },
+          {
+            "id": "137057",
+            "title": "Palästina 36",
+            "duration_minutes": 120,
+            "short_description": "Ein junger Mann kämpft im Schatten des Aufstands um seine Heimat und Identität.",
+            "showtimes": [
+              "13:00"
+            ]
+          },
+          {
+            "id": "135961",
+            "title": "Rosebush Pruning",
+            "duration_minutes": 97,
+            "short_description": "Ein Familiengeheimnis bedroht den idyllischen Traum in der spanischen Villa.",
+            "showtimes": [
+              "13:10"
+            ]
+          },
+          {
+            "id": "134133",
+            "title": "Der Astronaut - Project Hail Mary",
+            "duration_minutes": 156,
+            "short_description": "Allein im All: Ein Überleben entscheidet über das Schicksal der Menschheit.",
+            "showtimes": [
+              "13:30"
+            ]
+          },
+          {
+            "id": "137731",
+            "title": "Spaceballs - Mel Brooks verrückte Raumfahrt",
+            "duration_minutes": 96,
+            "short_description": "Im intergalaktischen Chaos kämpft ein Held gegen den bösen Lord Helmchen!",
+            "showtimes": [
+              "14:50"
+            ]
+          },
+          {
+            "id": "94611",
+            "title": "Do You Love Me",
+            "duration_minutes": 75,
+            "short_description": "Ein poetisches Portrait des Libanon: Musik, Erinnerung und Sehnsucht vereint.",
+            "showtimes": [
+              "15:00"
+            ]
+          },
+          {
+            "id": "138097",
+            "title": "Die kleine Amélie oder Der Charakter des Regens",
+            "duration_minutes": 78,
+            "short_description": "Ein Zauber aus Kindheit und Verlust – ein Abenteuer, das das Herz berührt.",
+            "showtimes": [
+              "16:10"
+            ]
+          },
+          {
+            "id": "95727",
+            "title": "Disclosure Day - Der Tag der Wahrheit",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "16:20",
+              "19:05"
+            ]
+          },
+          {
+            "id": "138373",
+            "title": "Das Los des Fremden",
+            "duration_minutes": 103,
+            "short_description": "Inmitten des Krieges vereinen Schicksale fünf Familien über alle Kontinente.",
+            "showtimes": [
+              "16:30"
+            ]
+          },
+          {
+            "id": "138085",
+            "title": "Zombies im Zoo",
+            "duration_minutes": 92,
+            "short_description": "Ein Wolf und ein Berglöwe kämpfen gegen Zombie-Zootiere im Überlebenskampf!",
+            "showtimes": [
+              "17:30"
+            ]
+          },
+          {
+            "id": "135003",
+            "title": "Das Drama - Noch mal auf Anfang",
+            "duration_minutes": 105,
+            "short_description": "Kurz vor der Hochzeit droht ein Geheimnis, alles zu zerstören.",
+            "showtimes": [
+              "18:45"
+            ]
+          },
+          {
+            "id": "138093",
+            "title": "Backrooms",
+            "duration_minutes": 105,
+            "short_description": "Entdecke das Albtraum-Labyrinth, wo Einsamkeit und Schrecken warten.",
+            "showtimes": [
+              "20:15",
+              "22:40"
+            ]
+          },
+          {
+            "id": "138367",
+            "title": "The Death of Robin Hood",
+            "duration_minutes": 123,
+            "short_description": "Ein letzter Kampf um Erlösung in der dunklen Legende von Robin Hood.",
+            "showtimes": [
+              "20:30"
+            ]
+          },
+          {
+            "id": "136245",
+            "title": "Rose",
+            "duration_minutes": 94,
+            "short_description": "Im Schatten des Krieges kämpft ein Soldat um Liebe, Identität und Akzeptanz.",
+            "showtimes": [
+              "21:30"
+            ]
+          },
+          {
+            "id": "138095",
+            "title": "Obsession - Du sollst mich lieben",
+            "duration_minutes": 108,
+            "short_description": "Von der sehnsüchtigen Liebe zur besessenen Angst – ein fesselnder Albtraum!",
+            "showtimes": [
+              "22:10"
+            ]
+          },
+          {
+            "id": "97689",
+            "title": "Gorgonà",
+            "duration_minutes": 95,
+            "short_description": "Im Chaos der Zukunft kämpft eine junge Frau für Freiheit und Hoffnung.",
+            "showtimes": [
+              "23:05"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "764",
+      "name": "Kino Zukunft Berlin",
+      "street": "Alt-Stralau 68",
+      "postcode": "10245",
+      "url_slug": "kino-zukunft-berlin",
+      "latitude": 52.4974597,
+      "longitude": 13.4658621,
+      "program": {
+        "2026-06-22": [
+          {
+            "id": "137991",
+            "title": "Rose",
+            "duration_minutes": 94,
+            "short_description": "Im Schatten des Krieges kämpft ein Soldat um Liebe, Identität und Akzeptanz.",
+            "showtimes": [
+              "17:50"
+            ]
+          },
+          {
+            "id": "98305",
+            "title": "Nulpen",
+            "duration_minutes": 81,
+            "short_description": "Sommer, Freundschaft und das Streben nach Freiheit – eine unvergessliche Reise!",
+            "showtimes": [
+              "19:45"
+            ]
+          },
+          {
+            "id": "133331",
+            "title": "It's Never Over, Jeff Buckley",
+            "duration_minutes": 110,
+            "short_description": "",
+            "showtimes": [
+              "21:25"
+            ]
+          }
+        ],
+        "2026-06-21": [
+          {
+            "id": "98305",
+            "title": "Nulpen",
+            "duration_minutes": 81,
+            "short_description": "Sommer, Freundschaft und das Streben nach Freiheit – eine unvergessliche Reise!",
+            "showtimes": [
+              "16:00",
+              "19:45"
+            ]
+          },
+          {
+            "id": "135835",
+            "title": "Scherbenland",
+            "duration_minutes": 104,
+            "short_description": "Ton Steine Scherben und der Kreuzberger Sound der Gegenwart. Mit RAPK, Maike Rosa Vogel, Rio Reiser. ",
+            "showtimes": [
+              "17:40"
+            ]
+          },
+          {
+            "id": "124705",
+            "title": "Sirât",
+            "duration_minutes": 115,
+            "short_description": "Ein Rave in Südmarokkos Bergen birgt das Geheimnis einer verschwundenen Tochter.",
+            "showtimes": [
+              "21:25"
+            ]
+          }
+        ],
+        "2026-06-23": [
+          {
+            "id": "137991",
+            "title": "Rose",
+            "duration_minutes": 94,
+            "short_description": "Im Schatten des Krieges kämpft ein Soldat um Liebe, Identität und Akzeptanz.",
+            "showtimes": [
+              "17:50"
+            ]
+          },
+          {
+            "id": "98305",
+            "title": "Nulpen",
+            "duration_minutes": 81,
+            "short_description": "Sommer, Freundschaft und das Streben nach Freiheit – eine unvergessliche Reise!",
+            "showtimes": [
+              "19:45"
+            ]
+          },
+          {
+            "id": "124705",
+            "title": "Sirât",
+            "duration_minutes": 115,
+            "short_description": "Ein Rave in Südmarokkos Bergen birgt das Geheimnis einer verschwundenen Tochter.",
+            "showtimes": [
+              "21:25"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "2423",
+      "name": "Kino Intimes Berlin",
+      "street": "Boxhagener Strasse 107",
+      "postcode": "10245",
+      "url_slug": "kino-intimes-berlin",
+      "latitude": 52.512848,
+      "longitude": 13.458125,
+      "program": {
+        "2026-06-21": [
+          {
+            "id": "135855",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 110,
+            "short_description": "Eine Herde für alle  Fälle... ",
+            "showtimes": [
+              "12:00"
+            ]
+          },
+          {
+            "id": "137441",
+            "title": "Perfect Blue",
+            "duration_minutes": 81,
+            "short_description": "Zwischen Traum und Albtraum: Eine Sängerin sucht ihr wahres Ich und verliert die Realität.",
+            "showtimes": [
+              "12:15"
+            ]
+          },
+          {
+            "id": "137989",
+            "title": "Die kleine Amélie oder Der Charakter des Regens",
+            "duration_minutes": 78,
+            "short_description": "Ein Zauber aus Kindheit und Verlust – ein Abenteuer, das das Herz berührt.",
+            "showtimes": [
+              "14:00"
+            ]
+          },
+          {
+            "id": "134369",
+            "title": "Der Teufel trägt Prada 2",
+            "duration_minutes": 119,
+            "short_description": "Ein Kampf um Macht und Stil: Wer wird im Modegeschäft siegen?",
+            "showtimes": [
+              "14:15"
+            ]
+          },
+          {
+            "id": "138615",
+            "title": "Toy Story 5",
+            "duration_minutes": 102,
+            "short_description": "Wenn Technik die Spielzeit bedroht, sind Woody und Buzz gefordert wie nie!",
+            "showtimes": [
+              "15:50"
+            ]
+          },
+          {
+            "id": "137563",
+            "title": "Disclosure Day",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "16:40",
+              "19:30"
+            ]
+          },
+          {
+            "id": "137985",
+            "title": "Backrooms",
+            "duration_minutes": 111,
+            "short_description": "A strange doorway appears in the basement of a furniture showroom.",
+            "showtimes": [
+              "18:00",
+              "20:15",
+              "22:20"
+            ]
+          },
+          {
+            "id": "135403",
+            "title": "The Drama",
+            "duration_minutes": 106,
+            "short_description": "You are cordially invited... Witness the wedding of the year!",
+            "showtimes": [
+              "22:30"
+            ]
+          }
+        ],
+        "2026-06-22": [
+          {
+            "id": "137989",
+            "title": "Die kleine Amélie oder Der Charakter des Regens",
+            "duration_minutes": 78,
+            "short_description": "Ein Zauber aus Kindheit und Verlust – ein Abenteuer, das das Herz berührt.",
+            "showtimes": [
+              "14:00"
+            ]
+          },
+          {
+            "id": "134369",
+            "title": "Der Teufel trägt Prada 2",
+            "duration_minutes": 119,
+            "short_description": "Ein Kampf um Macht und Stil: Wer wird im Modegeschäft siegen?",
+            "showtimes": [
+              "14:15"
+            ]
+          },
+          {
+            "id": "135855",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 110,
+            "short_description": "Eine Herde für alle  Fälle... ",
+            "showtimes": [
+              "15:45"
+            ]
+          },
+          {
+            "id": "137563",
+            "title": "Disclosure Day",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "16:40",
+              "19:30"
+            ]
+          },
+          {
+            "id": "137985",
+            "title": "Backrooms",
+            "duration_minutes": 111,
+            "short_description": "A strange doorway appears in the basement of a furniture showroom.",
+            "showtimes": [
+              "18:00",
+              "20:15",
+              "22:20"
+            ]
+          },
+          {
+            "id": "137441",
+            "title": "Perfect Blue",
+            "duration_minutes": 81,
+            "short_description": "Zwischen Traum und Albtraum: Eine Sängerin sucht ihr wahres Ich und verliert die Realität.",
+            "showtimes": [
+              "22:30"
+            ]
+          }
+        ],
+        "2026-06-23": [
+          {
+            "id": "137989",
+            "title": "Die kleine Amélie oder Der Charakter des Regens",
+            "duration_minutes": 78,
+            "short_description": "Ein Zauber aus Kindheit und Verlust – ein Abenteuer, das das Herz berührt.",
+            "showtimes": [
+              "14:00"
+            ]
+          },
+          {
+            "id": "134369",
+            "title": "Der Teufel trägt Prada 2",
+            "duration_minutes": 119,
+            "short_description": "Ein Kampf um Macht und Stil: Wer wird im Modegeschäft siegen?",
+            "showtimes": [
+              "14:15"
+            ]
+          },
+          {
+            "id": "135855",
+            "title": "Glennkill: Ein Schafskrimi",
+            "duration_minutes": 110,
+            "short_description": "Eine Herde für alle  Fälle... ",
+            "showtimes": [
+              "15:45"
+            ]
+          },
+          {
+            "id": "137563",
+            "title": "Disclosure Day",
+            "duration_minutes": 145,
+            "short_description": "Was, wenn die Wahrheit über die Menschheit dich in Angst versetzt?",
+            "showtimes": [
+              "16:40",
+              "19:30"
+            ]
+          },
+          {
+            "id": "137985",
+            "title": "Backrooms",
+            "duration_minutes": 111,
+            "short_description": "A strange doorway appears in the basement of a furniture showroom.",
+            "showtimes": [
+              "18:00",
+              "20:15",
+              "22:20"
+            ]
+          },
+          {
+            "id": "137441",
+            "title": "Perfect Blue",
+            "duration_minutes": 81,
+            "short_description": "Zwischen Traum und Albtraum: Eine Sängerin sucht ihr wahres Ich und verliert die Realität.",
+            "showtimes": [
+              "22:30"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
