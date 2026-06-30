@@ -19,7 +19,7 @@ from pydantic import BaseModel
 from agents import Agent, Runner, RunHooks, RunContextWrapper
 from agents.tool import FunctionTool
 
-from tools import search_jobs
+from tools import search_jobs_adzuna, search_jobs_serpapi
 
 logger = logging.getLogger(__name__)
 
@@ -32,13 +32,15 @@ class JobSummary(BaseModel):
     title: str
     company_name: str
     location: str
-    schedule_type: str | None       # e.g. "Full-time", "Part-time"
-    salary: str | None              # e.g. "€60,000–€80,000 a year"
-    posted_at: str | None           # e.g. "3 days ago"
-    work_from_home: bool | None
-    via: str | None                 # e.g. "via LinkedIn"
-    apply_link: str | None
-    description_snippet: str | None  # First ~200 chars of the description
+    contract_time: str | None       # "full_time" | "part_time" | None
+    contract_type: str | None       # "permanent" | "contract" | None
+    salary_min: float | None        # Minimum salary in EUR
+    salary_max: float | None        # Maximum salary in EUR
+    salary_is_predicted: bool       # True if salary was estimated by Adzuna
+    posted_at: str | None           # Posting date, e.g. "2026-06-28"
+    category: str | None            # Job category label, e.g. "IT Jobs"
+    apply_link: str | None          # Direct URL to the full listing
+    description_snippet: str | None # First ~200 chars of the description
 
 
 class JobSearchReport(BaseModel):
@@ -54,47 +56,56 @@ class JobSearchReport(BaseModel):
 # ---------------------------------------------------------------------------
 
 INSTRUCTIONS = """
-You are a helpful job-search assistant specialising in tech roles in Berlin.
-Your task is to find current job openings in machine learning, data science,
-and AI engineering in Berlin, and present them in a clear, structured way.
+You are a helpful job-search assistant specialising in tech roles in Berlin, Germany.
+Your task is to find current job openings in machine learning, data science, and AI
+engineering in Berlin, and present them in a clear, structured way.
 
-## Step 1 — Run targeted searches
-Call `search_jobs` multiple times with specific queries to cover the three
-categories. Good example queries:
-- "machine learning engineer Berlin"
-- "data scientist Berlin"
-- "AI engineer Berlin"
-- "MLOps engineer Berlin"
+## Tools available
+- `search_jobs_adzuna`  — PRIMARY tool. Searches the Adzuna German job index with real
+  Berlin listings including salary data. Supports pagination via the `page` parameter.
+- `search_jobs_serpapi` — FALLBACK tool. Uses Google Jobs via SerpApi. Use only if Adzuna
+  returns no results for a specific query.
 
-You may call `search_jobs` with `start=10` to fetch a second page for any
-query if you want more results.
+## Step 1 — Run targeted searches with Adzuna
+Call `search_jobs_adzuna` multiple times to cover the three main categories. Good queries:
+  - "machine learning engineer"
+  - "data scientist"
+  - "AI engineer"
+  - "MLOps engineer"
+  - "deep learning engineer"
+  - "LLM engineer"
+
+Use `page=2` for any query to fetch a second page if you want more breadth.
 
 ## Step 2 — Deduplicate
-Some jobs may appear in multiple searches. Deduplicate by job_id or by
-identical (title, company_name) pairs. Keep the richer of the two records.
+Some jobs may appear in multiple searches. Deduplicate by `id` or by identical
+(title, company_name) pairs. Keep the richer of the two records.
 
 ## Step 3 — Build the report
 Produce a JobSearchReport:
 - `location`: "Berlin, Germany"
 - `categories_searched`: the list of query strings you actually used.
 - `total_jobs_found`: count of unique jobs after deduplication.
-- `jobs`: one JobSummary per unique job, ordered by recency (most recent first,
-  using posted_at; put jobs with no date at the end). For each job:
+- `jobs`: one JobSummary per unique job, ordered by date (most recent first;
+  put jobs with no date at the end). For each job:
     - `title`: job title
     - `company_name`: hiring company
-    - `location`: location string from the listing
-    - `schedule_type`: from extensions (null if missing)
-    - `salary`: from extensions (null if missing)
-    - `posted_at`: from extensions (null if missing)
-    - `work_from_home`: from extensions (null if missing)
-    - `via`: the source platform
-    - `apply_link`: direct URL to apply (null if missing)
+    - `location`: location_display string from the listing
+    - `contract_time`: "full_time" | "part_time" | null
+    - `contract_type`: "permanent" | "contract" | null
+    - `salary_min`: minimum salary in EUR (null if missing)
+    - `salary_max`: maximum salary in EUR (null if missing)
+    - `salary_is_predicted`: true if Adzuna estimated the salary
+    - `posted_at`: the `created` date from the listing (null if missing)
+    - `category`: category label from the listing (null if missing)
+    - `apply_link`: the `redirect_url` from the listing (null if missing)
     - `description_snippet`: first ~200 characters of the description (null if missing)
-- `summary`: a 3-5 sentence overview — highlight the number of openings found,
-  the most active hiring companies, any salary ranges observed, and the most
-  common seniority levels or required skills.
+- `summary`: a 3–5 sentence overview — highlight the number of openings found,
+  the most active hiring companies, salary ranges observed (distinguishing real
+  vs. predicted salaries), and the most common seniority levels or required skills.
 
 ## Rules
+- Always try Adzuna first for each query.
 - If a search returns no results, note it but continue with the other queries.
 - Keep the summary factual, friendly, and useful for a job seeker.
 """
@@ -126,7 +137,7 @@ jobs_agent = Agent(
     model="gpt-4o",
     instructions=INSTRUCTIONS,
     output_type=JobSearchReport,
-    tools=[search_jobs],
+    tools=[search_jobs_adzuna, search_jobs_serpapi],
 )
 
 

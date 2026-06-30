@@ -32,19 +32,25 @@ def _format_report(report: JobSearchReport) -> str:
         "",
         f"    {report.summary}",
         "",
-        f"    {'TITLE':<45} {'COMPANY':<30} {'POSTED':<15} {'TYPE':<15} SALARY",
-        "    " + "-" * 115,
+        f"    {'TITLE':<45} {'COMPANY':<30} {'DATE':<12} {'TYPE':<12} SALARY (EUR)",
+        "    " + "-" * 120,
     ]
     for job in report.jobs:
-        title = job.title[:43] + "…" if len(job.title) > 44 else job.title
-        company = job.company_name[:28] + "…" if len(job.company_name) > 29 else job.company_name
-        posted = job.posted_at or "—"
-        schedule = job.schedule_type or "—"
-        salary = job.salary or "—"
-        wfh = " 🏠" if job.work_from_home else ""
-        lines.append(f"    {title:<45} {company:<30} {posted:<15} {schedule:<15} {salary}{wfh}")
+        title    = job.title[:43] + "…" if len(job.title) > 44 else job.title
+        company  = job.company_name[:28] + "…" if len(job.company_name) > 29 else job.company_name
+        posted   = job.posted_at or "—"
+        ctime    = (job.contract_time or "—").replace("_", " ")
+        if job.salary_min and job.salary_max:
+            salary = f"{int(job.salary_min):,}–{int(job.salary_max):,}"
+            if job.salary_is_predicted:
+                salary += " ~"
+        elif job.salary_min:
+            salary = f"{int(job.salary_min):,}+"
+        else:
+            salary = "—"
+        lines.append(f"    {title:<45} {company:<30} {posted:<12} {ctime:<12} {salary}")
         if job.apply_link:
-            lines.append(f"    {'':>10}↳ Apply: {job.apply_link}")
+            lines.append(f"    {'':>10}↳ {job.apply_link}")
     return "\n".join(lines)
 
 
