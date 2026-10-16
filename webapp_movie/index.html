@@ -7,6 +7,8 @@
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- MapLibre GL CSS (renders the OpenFreeMap vector basemap) -->
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" />
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -264,13 +266,18 @@
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- MapLibre GL + Leaflet binding: lets Leaflet display vector basemaps -->
+<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.4/leaflet-maplibre-gl.js"></script>
 
 <script>
   // ── Map setup ──────────────────────────────────────────────────────────────
-  const map = L.map("map").setView([52.52, 13.405], 12);
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-    maxZoom: 19,
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
+  const map = L.map("map", { maxZoom: 19 }).setView([52.52, 13.405], 12);
+  // OpenFreeMap "Positron" vector basemap — free, no API key required.
+  // https://openfreemap.org
+  L.maplibreGL({
+    style: "https://tiles.openfreemap.org/styles/positron",
+    attribution: '<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/" target="_blank">OpenMapTiles</a> Data from <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
   }).addTo(map);
 
   const cinemaIcon = L.divIcon({
